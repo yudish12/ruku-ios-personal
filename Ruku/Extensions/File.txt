@@ -1,0 +1,5 @@
+extension View {
+    func pageControlColors(selected: Color, normal: Color) -> some View {
+        self.modifier(PageControlColorModifier(selected: selected, normal: normal))
+    }
+}
