@@ -10,26 +10,24 @@ import PhotosUI
 
 struct CreateProfileScreen: View {
     @EnvironmentObject private var appState: AppStateViewModel
-    @State private var viewModel = CreateProfileViewModel()
+    @EnvironmentObject private var auth: AuthViewModel
     
     var body: some View {
         VStack(spacing: 0) {
-            HeaderView(skipAction: appState.completedOrSkipProfile)
-            
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    AvatarPickerView(image: viewModel.avatarImage) {
-                        viewModel.isPickerPresented = true
+                    AvatarPickerView(image: auth.avatarImage) {
+                        auth.isPickerPresented = true
                     }
                     
-                    TextFieldView(placeholderText: "name", text: $viewModel.name)
-                 
-                    GenderSelector(selectedGender: $viewModel.selectedGender)
+                    TextFieldView(title: "Name", placeholderText: "Enter your name", text: $auth.name)
                     
-                    TextFieldView(placeholderText: "Email", text: $viewModel.email)
+                    GenderSelector(selectedGender: $auth.selectedGender)
                     
-                    PasswordFieldView(password: $viewModel.password)
-
+                    TextFieldView(title: "Email", placeholderText: "Enter your email", text: $auth.email)
+                    
+                    PasswordFieldView(password: $auth.password)
+                    
                 }
                 .padding(.horizontal)
                 .padding(.top, 16)
@@ -37,61 +35,37 @@ struct CreateProfileScreen: View {
             }
             
             VStack(spacing: 12) {
-                Button {
-                    Task {
-                        try await viewModel.submit()
-                        appState.completedOrSkipProfile()
-                    }
-                } label: {
-                    ZStack {
-                        Text("Create Profile")
-                            .frame(maxWidth: .infinity)
-                            .font(.inter(weight: .bold, size: 14))
-                            .padding(.vertical, 12)
-                            .opacity(viewModel.isSubmitting ? 0 : 1)
-                        if viewModel.isSubmitting {
-                            ProgressView()
-                                .progressViewStyle(.circular)
-                                .padding(.vertical, 12)
-                        }
-                    }
-                    .background(Color.primaryColor)
-                    .foregroundStyle(Color.white)
-                    .cornerRadius(50)
-                    .animation(.easeInOut, value: viewModel.isSubmitting)
-                }
-                .disabled(!viewModel.canSubmit)
-                .opacity(viewModel.canSubmit ? 1 : 0.4)
-                .animation(.easeInOut, value: viewModel.canSubmit)
+                CreateProfileButton(auth: auth)
                 
-                HStack(spacing: 4) {
-                    Text("By continuing, you agree to our")
-                        .font(.inter(weight: .regular, size: 12))
-                        .foregroundStyle(Color.primaryColor)
-                    
-                    Button {
-                        // Privacy Policy action
-                    } label: {
-                        Text("Privacy Policy.")
-                            .font(.inter(weight: .bold, size: 12))
-                            .foregroundStyle(Color.primaryColor)
-                    }
-                }
+                PrivacyPolicyRow()
             }
             .padding(.horizontal)
             .padding(.vertical, 16)
         }
         .photosPicker(
-            isPresented: $viewModel.isPickerPresented,
-            selection: $viewModel.selectedPhoto,
+            isPresented: $auth.isPickerPresented,
+            selection: $auth.selectedPhoto,
             matching: .images)
-        .onChange(of: viewModel.selectedPhoto) { oldValue, newValue in
-            Task { await viewModel.loadImage(from: newValue) }
+        .onChange(of: auth.selectedPhoto) { oldValue, newValue in
+            Task { await auth.loadImage(from: newValue) }
+        }
+        .navigationTitle("Create your Profile")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Skip") {
+                    // do something
+                    print("Hello Do you like SwiftUI?")
+                }
+            }
         }
     }
 }
 
 #Preview {
+    @Previewable @StateObject var appState = AppStateViewModel()
+    @Previewable @StateObject var auth = AuthViewModel()
     
     CreateProfileScreen()
+        .environmentObject(appState)
+        .environmentObject(auth)
 }

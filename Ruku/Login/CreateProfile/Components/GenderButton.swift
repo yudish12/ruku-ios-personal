@@ -26,14 +26,14 @@ struct GenderButton: View {
                 .font(.inter(weight: .bold, size: 12))
                 .padding(.vertical, 8)
                 .padding(.horizontal, 32)
-                .foregroundColor(selectedGender == gender ? .white : .secondaryColor)
+                .foregroundColor(.white)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
-                        .fill(selectedGender == gender ? Color.black : Color.clear)
+                        .fill(selectedGender == gender ? Color.buttonGreenColor : Color.backgroundTealColor)
                 )
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.secondaryColor, lineWidth: selectedGender == gender ? 0 : 1)
+                        .stroke(Color.backgroundTealColor, lineWidth: selectedGender == gender ? 0 : 1)
                 )
         }
     }

@@ -9,14 +9,12 @@ import SwiftUI
 
 extension View {
     
-    @ViewBuilder
     func pageControlColors(
         selected: Color,
         normal: Color) -> some View {
         self.modifier(PageControlColorModifier(selected: selected, normal: normal))
     }
     
-    @ViewBuilder
     func borderedTextField(
         borderColor: Color = .gray,
         backgroundColor: Color = .white,
@@ -32,5 +30,27 @@ extension View {
             )
     }
     
-    
+    func elevatedShadow(
+        topColor: Color = .black.opacity(0.08),
+        bottomColor: Color = .black.opacity(0.05),
+        topRadius: CGFloat = 10,
+        bottomRadius: CGFloat = 8,
+        topY: CGFloat = -2,
+        bottomY: CGFloat = 4,
+        cornerRadius: CGFloat = 12,
+        background: Color = .white
+    ) -> some View {
+        self.modifier(
+            ElevatedShadowModifier(
+                topColor: topColor,
+                bottomColor: bottomColor,
+                topRadius: topRadius,
+                bottomRadius: bottomRadius,
+                topY: topY,
+                bottomY: bottomY,
+                cornerRadius: cornerRadius,
+                background: background
+            )
+        )
+    }
 }

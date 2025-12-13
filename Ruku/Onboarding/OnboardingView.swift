@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     
-    @StateObject private var appState = AppStateViewModel()
+    @EnvironmentObject var appState: AppStateViewModel
     
     var body: some View {
         VStack {
@@ -21,27 +21,29 @@ struct OnboardingView: View {
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
             .animation(.spring(), value: appState.currentPage)
-            .pageControlColors(selected: .secondaryColor, normal: .primaryColor)
-            
-
+            .pageControlColors(selected: .buttonGreenColor, normal: .white)
+    
             Button {
                 appState.nextOnboardingPage()
             } label: {
-                Text(appState.canGoNextPage() ? "Next" : "Welcome To RUKU")
+                Text(appState.canGoNextPage() ? "Next" : "Continue")
                     .frame(maxWidth: .infinity)
                     .font(.inter(weight: .bold, size: 14))
                     .padding(.vertical, 12)
-                    .background(Color.primaryColor)
-                    .foregroundStyle(Color.white)
+                    .background(Color.buttonGreenColor)
+                    .foregroundStyle(.white)
                     .cornerRadius(50)
                    
             }
         }
         .padding(.horizontal)
-        .background(Color.backgroundColor)
+        .background(Color.backgroundTealColor)
     }
 }
 
 #Preview {
+    
+    @Previewable var appState =  AppStateViewModel()
     OnboardingView()
+        .environmentObject(appState)
 }

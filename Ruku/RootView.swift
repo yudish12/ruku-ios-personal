@@ -1,3 +1,9 @@
+//
+//  RootView.swift
+//  Ruku
+//
+//  Created by Vishal Singh on 10/12/25.
+//
 
 import SwiftUI
 
@@ -8,10 +14,12 @@ struct RootView: View {
         switch appState.currentRoot {
         case .onboarding:
             OnboardingView()
-        case .notification:
-            NotificationScreen()
-        case .login, .subscription:
+        case .permission:
+            PermissionScreen()
+        case .login:
             LoginScreen()
+        case .subscription:
+            SubscriptionScreen()
         case .home:
             HomeScreen()
         }

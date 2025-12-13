@@ -18,7 +18,7 @@ struct AvatarPickerView: View {
                     selectedImage
                         .resizable()
                 } else {
-                    Image("uploadImage")
+                    Image("camera")
                         .resizable()
                 }
             }
@@ -31,11 +31,15 @@ struct AvatarPickerView: View {
                     .font(.inter(weight: .bold, size: 16))
                     .padding(.vertical, 8)
                     .padding(.horizontal, 12)
-                    .foregroundStyle(Color.primaryColor.opacity(0.85))
-                    .background(Color.primaryColor.opacity(0.1))
+                    .foregroundStyle(Color.backgroundTealColor)
+                    .background(.white)
                     .cornerRadius(12)
             }
         }
         .frame(maxWidth: .infinity)
     }
+}
+
+#Preview {
+    AvatarPickerView(image: nil, action: {})
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PasswordFieldView: View {
+
     @Binding var password: String
 
     var body: some View {
@@ -15,7 +16,7 @@ struct PasswordFieldView: View {
             Text("Password")
                 .font(.inter(weight: .bold, size: 20))
             
-            SecureField("Enter your full name", text: $password)
+            SecureField("Enter your password", text: $password)
                 .borderedTextField()
         }
     }

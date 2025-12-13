@@ -8,10 +8,11 @@
 import SwiftUI
 
 extension Color {
-    static let primaryColor = Color("AppPrimaryColor")
-    static let secondaryColor = Color("AppSecondaryColor")
-    static let tertiaryColor = Color("AppTertiaryColor")
-    static let backgroundColor = Color("BackgroundColor")
-    static let primaryGreenColor = Color("GreenPrimaryColor")
-    static let lightGrayColor = Color("GrayPrimaryColor")
+    static let backgroundTealColor = Color("backgroundTealColor")
+    static let buttonGreenColor = Color("buttonGreenColor")
+    static let textPrimaryColor = Color("textPrimaryColor")
+    static let textSecondaryColor = Color("textSecondaryColor")
+    static let textTertiaryColor = Color("textTertiaryColor")
+
+    
 }

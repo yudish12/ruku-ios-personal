@@ -20,7 +20,7 @@ struct HeaderView: View {
             Button(action: skipAction) {
                 Text("Skip")
                     .font(.inter(weight: .medium, size: 16))
-                    .foregroundStyle(Color.primaryColor)
+                    .foregroundStyle(.white)
                     .padding(8)
             }
         }

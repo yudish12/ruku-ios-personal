@@ -8,14 +8,9 @@
 import SwiftUI
 
 struct SubscriptionScreen: View {
-    @State private var selected: String? = "Premium"
+    @State private var selected: String? = nil
     
     var body: some View {
-        VStack {
-            Text("Subscription")
-                .font(.inter(weight: .bold, size: 20))
-            
-            
             ScrollView {
                 VStack(spacing: 16) {
                     SubscriptionCard(
@@ -59,17 +54,14 @@ struct SubscriptionScreen: View {
                 Text("Payment will be charged to your Apple Account at confirmation of purchase. Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period.")
                     .font(.inter(weight: .regular, size: 12))
                     .multilineTextAlignment(.center)
-                    .foregroundStyle(Color.primaryColor)
+                    .foregroundStyle(Color.white)
                     .lineSpacing(4)
                     .padding(.horizontal, 32)
                     .padding(.top, 12)
             }
             .scrollBounceBehavior(.basedOnSize)
-            
-          
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.backgroundColor)
+            .background(Color.backgroundTealColor)
+            .navigationTitle("Subscription")
     }
 }
 

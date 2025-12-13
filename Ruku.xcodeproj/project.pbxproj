@@ -10,12 +10,18 @@
 		C92E83672EEAEA71002BB4C7 /* SubscriptionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E83662EEAEA70002BB4C7 /* SubscriptionScreen.swift */; };
 		C92E836C2EEAEAA3002BB4C7 /* SubscriptionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E836B2EEAEAA3002BB4C7 /* SubscriptionCard.swift */; };
 		C92E83B32EEBEBBB002BB4C7 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E83B22EEBEBBB002BB4C7 /* LoginScreen.swift */; };
-		C92E83B52EEBEBC9002BB4C7 /* OtpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E83B42EEBEBC9002BB4C7 /* OtpScreen.swift */; };
+		C92E83B52EEBEBC9002BB4C7 /* OTPVerificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E83B42EEBEBC9002BB4C7 /* OTPVerificationScreen.swift */; };
 		C92E83B72EEBECAC002BB4C7 /* PasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E83B62EEBECAC002BB4C7 /* PasswordFieldView.swift */; };
+		C986D70D2EEC0F9C00AC3613 /* ElevatedShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986D70C2EEC0F9C00AC3613 /* ElevatedShadowModifier.swift */; };
+		C986D7112EEC151500AC3613 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986D7102EEC151500AC3613 /* OTPTextField.swift */; };
+		C986D7142EEC164100AC3613 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986D7132EEC164100AC3613 /* AuthViewModel.swift */; };
+		C986D7182EEC74A000AC3613 /* PrivacyPolicyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986D7172EEC74A000AC3613 /* PrivacyPolicyRow.swift */; };
+		C986D71A2EEC75D800AC3613 /* CreateProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986D7192EEC75D800AC3613 /* CreateProfileButton.swift */; };
+		C986D7202EECAFDF00AC3613 /* SinglePermissonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986D71F2EECAFDF00AC3613 /* SinglePermissonRow.swift */; };
+		C986D7222EECB7A400AC3613 /* PermissionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986D7212EECB7A400AC3613 /* PermissionInfo.swift */; };
+		C986D7282EECCDAE00AC3613 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986D7272EECCDAE00AC3613 /* OTPViewModel.swift */; };
 		C98D34F02EE8C28F0029E05D /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D34EF2EE8C28F0029E05D /* HomeScreen.swift */; };
 		C98D34F52EE8C7210029E05D /* GenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D34F32EE8C7210029E05D /* GenderButton.swift */; };
-		C98D34FB2EE8C7890029E05D /* CreateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D34FA2EE8C7890029E05D /* CreateProfileViewModel.swift */; };
-		C98D34FD2EE8C7DF0029E05D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D34FC2EE8C7DF0029E05D /* HeaderView.swift */; };
 		C98D34FF2EE940580029E05D /* AvatarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D34FE2EE940580029E05D /* AvatarPickerView.swift */; };
 		C98D35012EE946060029E05D /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D35002EE946060029E05D /* TextFieldView.swift */; };
 		C98D35032EE946AA0029E05D /* GenderSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D35022EE946AA0029E05D /* GenderSelector.swift */; };
@@ -43,7 +49,7 @@
 		C9F1A86A2EE84E3D00712D8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F1A84F2EE84E3D00712D8F /* Assets.xcassets */; };
 		C9F1A86D2EE84E6300712D8F /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A86C2EE84E6300712D8F /* PermissionManager.swift */; };
 		C9F1A8842EE8976900712D8F /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A8832EE8976900712D8F /* View+Extension.swift */; };
-		C9F1A88D2EE89ECA00712D8F /* NotificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A88B2EE89ECA00712D8F /* NotificationScreen.swift */; };
+		C9F1A88D2EE89ECA00712D8F /* PermissionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A88B2EE89ECA00712D8F /* PermissionScreen.swift */; };
 		C9F1A8932EE89ECE00712D8F /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A88E2EE89ECE00712D8F /* OnboardingPage.swift */; };
 		C9F1A8942EE89ECE00712D8F /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A88F2EE89ECE00712D8F /* OnboardingPageView.swift */; };
 		C9F1A8952EE89ECE00712D8F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A8902EE89ECE00712D8F /* OnboardingView.swift */; };
@@ -58,12 +64,18 @@
 		C92E83662EEAEA70002BB4C7 /* SubscriptionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionScreen.swift; sourceTree = "<group>"; };
 		C92E836B2EEAEAA3002BB4C7 /* SubscriptionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCard.swift; sourceTree = "<group>"; };
 		C92E83B22EEBEBBB002BB4C7 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
-		C92E83B42EEBEBC9002BB4C7 /* OtpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpScreen.swift; sourceTree = "<group>"; };
+		C92E83B42EEBEBC9002BB4C7 /* OTPVerificationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationScreen.swift; sourceTree = "<group>"; };
 		C92E83B62EEBECAC002BB4C7 /* PasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldView.swift; sourceTree = "<group>"; };
+		C986D70C2EEC0F9C00AC3613 /* ElevatedShadowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatedShadowModifier.swift; sourceTree = "<group>"; };
+		C986D7102EEC151500AC3613 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
+		C986D7132EEC164100AC3613 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C986D7172EEC74A000AC3613 /* PrivacyPolicyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyRow.swift; sourceTree = "<group>"; };
+		C986D7192EEC75D800AC3613 /* CreateProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileButton.swift; sourceTree = "<group>"; };
+		C986D71F2EECAFDF00AC3613 /* SinglePermissonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePermissonRow.swift; sourceTree = "<group>"; };
+		C986D7212EECB7A400AC3613 /* PermissionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionInfo.swift; sourceTree = "<group>"; };
+		C986D7272EECCDAE00AC3613 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		C98D34EF2EE8C28F0029E05D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		C98D34F32EE8C7210029E05D /* GenderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderButton.swift; sourceTree = "<group>"; };
-		C98D34FA2EE8C7890029E05D /* CreateProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewModel.swift; sourceTree = "<group>"; };
-		C98D34FC2EE8C7DF0029E05D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		C98D34FE2EE940580029E05D /* AvatarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerView.swift; sourceTree = "<group>"; };
 		C98D35002EE946060029E05D /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		C98D35022EE946AA0029E05D /* GenderSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelector.swift; sourceTree = "<group>"; };
@@ -93,7 +105,7 @@
 		C9F1A86C2EE84E6300712D8F /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		C9F1A86E2EE86F3500712D8F /* Ruku.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ruku.entitlements; sourceTree = "<group>"; };
 		C9F1A8832EE8976900712D8F /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
-		C9F1A88B2EE89ECA00712D8F /* NotificationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScreen.swift; sourceTree = "<group>"; };
+		C9F1A88B2EE89ECA00712D8F /* PermissionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionScreen.swift; sourceTree = "<group>"; };
 		C9F1A88E2EE89ECE00712D8F /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		C9F1A88F2EE89ECE00712D8F /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		C9F1A8902EE89ECE00712D8F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -150,40 +162,93 @@
 		C92E836D2EEB44F2002BB4C7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C986D7122EEC163400AC3613 /* ViewModel */,
+				C986D70E2EEC14EE00AC3613 /* Otp */,
 				C98D34F22EE8C71D0029E05D /* CreateProfile */,
 				C92E83B22EEBEBBB002BB4C7 /* LoginScreen.swift */,
-				C92E83B42EEBEBC9002BB4C7 /* OtpScreen.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		C986D70E2EEC14EE00AC3613 /* Otp */ = {
+			isa = PBXGroup;
+			children = (
+				C986D7262EECCC7D00AC3613 /* ViewModel */,
+				C986D70F2EEC14F800AC3613 /* Components */,
+				C92E83B42EEBEBC9002BB4C7 /* OTPVerificationScreen.swift */,
+			);
+			path = Otp;
+			sourceTree = "<group>";
+		};
+		C986D70F2EEC14F800AC3613 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C986D7102EEC151500AC3613 /* OTPTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C986D7122EEC163400AC3613 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C986D7132EEC164100AC3613 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C986D71D2EECAFB200AC3613 /* Permisson */ = {
+			isa = PBXGroup;
+			children = (
+				C986D7252EECB8C800AC3613 /* ViewModel */,
+				C986D71E2EECAFC300AC3613 /* Components */,
+				C9F1A88B2EE89ECA00712D8F /* PermissionScreen.swift */,
+			);
+			path = Permisson;
+			sourceTree = "<group>";
+		};
+		C986D71E2EECAFC300AC3613 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C986D71F2EECAFDF00AC3613 /* SinglePermissonRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C986D7252EECB8C800AC3613 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C986D7212EECB7A400AC3613 /* PermissionInfo.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C986D7262EECCC7D00AC3613 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C986D7272EECCDAE00AC3613 /* OTPViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C98D34F22EE8C71D0029E05D /* CreateProfile */ = {
 			isa = PBXGroup;
 			children = (
 				C98D34F92EE8C7430029E05D /* Components */,
-				C98D34F82EE8C73F0029E05D /* ViewModel */,
 				C9F1A89E2EE8A32700712D8F /* CreateProfileScreen.swift */,
 			);
 			path = CreateProfile;
-			sourceTree = "<group>";
-		};
-		C98D34F82EE8C73F0029E05D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C98D34FA2EE8C7890029E05D /* CreateProfileViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C98D34F92EE8C7430029E05D /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				C98D34F32EE8C7210029E05D /* GenderButton.swift */,
-				C98D34FC2EE8C7DF0029E05D /* HeaderView.swift */,
 				C98D34FE2EE940580029E05D /* AvatarPickerView.swift */,
 				C98D35002EE946060029E05D /* TextFieldView.swift */,
 				C98D35022EE946AA0029E05D /* GenderSelector.swift */,
 				C92E83B62EEBECAC002BB4C7 /* PasswordFieldView.swift */,
+				C986D7172EEC74A000AC3613 /* PrivacyPolicyRow.swift */,
+				C986D7192EEC75D800AC3613 /* CreateProfileButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -254,8 +319,8 @@
 		C9F1A88C2EE89ECA00712D8F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C986D71D2EECAFB200AC3613 /* Permisson */,
 				C92E83692EEAEA80002BB4C7 /* Subscription */,
-				C9F1A88B2EE89ECA00712D8F /* NotificationScreen.swift */,
 				C98D34EF2EE8C28F0029E05D /* HomeScreen.swift */,
 			);
 			path = Screens;
@@ -275,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				C9F1A8972EE89ED300712D8F /* PageControlColorModifier.swift */,
+				C986D70C2EEC0F9C00AC3613 /* ElevatedShadowModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -369,20 +435,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C986D70D2EEC0F9C00AC3613 /* ElevatedShadowModifier.swift in Sources */,
 				C98D35012EE946060029E05D /* TextFieldView.swift in Sources */,
-				C9F1A88D2EE89ECA00712D8F /* NotificationScreen.swift in Sources */,
+				C986D7222EECB7A400AC3613 /* PermissionInfo.swift in Sources */,
+				C9F1A88D2EE89ECA00712D8F /* PermissionScreen.swift in Sources */,
 				C9F1A8542EE84E3D00712D8F /* Color+Extension.swift in Sources */,
 				C98D34F52EE8C7210029E05D /* GenderButton.swift in Sources */,
 				C9F1A89F2EE8A32700712D8F /* CreateProfileScreen.swift in Sources */,
+				C986D7282EECCDAE00AC3613 /* OTPViewModel.swift in Sources */,
+				C986D7202EECAFDF00AC3613 /* SinglePermissonRow.swift in Sources */,
+				C986D71A2EEC75D800AC3613 /* CreateProfileButton.swift in Sources */,
 				C98D35032EE946AA0029E05D /* GenderSelector.swift in Sources */,
 				C9F1A8552EE84E3D00712D8F /* Font+Extension.swift in Sources */,
 				C9F1A86D2EE84E6300712D8F /* PermissionManager.swift in Sources */,
 				C92E83B72EEBECAC002BB4C7 /* PasswordFieldView.swift in Sources */,
-				C98D34FD2EE8C7DF0029E05D /* HeaderView.swift in Sources */,
+				C986D7182EEC74A000AC3613 /* PrivacyPolicyRow.swift in Sources */,
 				C9F1A8932EE89ECE00712D8F /* OnboardingPage.swift in Sources */,
 				C92E83672EEAEA71002BB4C7 /* SubscriptionScreen.swift in Sources */,
 				C9F1A8942EE89ECE00712D8F /* OnboardingPageView.swift in Sources */,
-				C98D34FB2EE8C7890029E05D /* CreateProfileViewModel.swift in Sources */,
+				C986D7112EEC151500AC3613 /* OTPTextField.swift in Sources */,
 				C98D34FF2EE940580029E05D /* AvatarPickerView.swift in Sources */,
 				C9F1A8992EE89ED300712D8F /* PageControlColorModifier.swift in Sources */,
 				C9F1A8952EE89ECE00712D8F /* OnboardingView.swift in Sources */,
@@ -391,7 +462,8 @@
 				C92E836C2EEAEAA3002BB4C7 /* SubscriptionCard.swift in Sources */,
 				C92E83B32EEBEBBB002BB4C7 /* LoginScreen.swift in Sources */,
 				C98D34F02EE8C28F0029E05D /* HomeScreen.swift in Sources */,
-				C92E83B52EEBEBC9002BB4C7 /* OtpScreen.swift in Sources */,
+				C986D7142EEC164100AC3613 /* AuthViewModel.swift in Sources */,
+				C92E83B52EEBEBC9002BB4C7 /* OTPVerificationScreen.swift in Sources */,
 				C9F1A8842EE8976900712D8F /* View+Extension.swift in Sources */,
 				C9F1A8572EE84E3D00712D8F /* RukuApp.swift in Sources */,
 			);
@@ -529,23 +601,21 @@
 				CODE_SIGN_ENTITLEMENTS = Ruku/Ruku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6GMWFC38DP;
+				DEVELOPMENT_TEAM = RGJ5SHWS69;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ruku/Info.plist;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to help track prayer times and nearby mosques.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yudishfour.Ruku;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vishalsingh.Ruku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -565,23 +635,21 @@
 				CODE_SIGN_ENTITLEMENTS = Ruku/Ruku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6GMWFC38DP;
+				DEVELOPMENT_TEAM = RGJ5SHWS69;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ruku/Info.plist;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to help track prayer times and nearby mosques.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yudishfour.Ruku;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vishalsingh.Ruku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;

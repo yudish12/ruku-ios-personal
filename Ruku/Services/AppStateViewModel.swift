@@ -9,12 +9,12 @@ import SwiftUI
 import Combine
 
 enum RootScreen {
-    case onboarding, notification, login, subscription, home
+    case onboarding, permission, login, subscription, home
 }
 
 class AppStateViewModel: ObservableObject {
     @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding = false
-    @AppStorage("hasAllowOrSkipNotification") var hasAllowOrSkipNotification = false
+    @AppStorage("hasAllowOrPermission") var hasAllowOrPermission = false
     @AppStorage("hasCreatedOrSkipProfile") var hasCreatedOrSkipProfile = false
     
     @Published var currentPage: Int = 0
@@ -23,8 +23,8 @@ class AppStateViewModel: ObservableObject {
         hasCompletedOnboarding = true
     }
     
-    func allowOrSkipNotification() {
-        hasAllowOrSkipNotification = true
+    func allowPermission() {
+        hasAllowOrPermission = true
     }
     
     func completedOrSkipProfile() {
@@ -46,8 +46,8 @@ class AppStateViewModel: ObservableObject {
     var currentRoot: RootScreen {
         if !hasCompletedOnboarding {
             return .onboarding
-        } else if !hasAllowOrSkipNotification {
-            return .notification
+        } else if !hasAllowOrPermission {
+            return .permission
         } else if !hasCreatedOrSkipProfile {
             return .login
         } else {

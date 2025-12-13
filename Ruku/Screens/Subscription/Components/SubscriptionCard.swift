@@ -19,16 +19,16 @@ struct SubscriptionCard: View {
                 
                 Text("/ month")
                     .font(.inter(weight: .medium, size: 16))
-                    .foregroundStyle(Color.primaryColor)
+                    .foregroundStyle(Color.backgroundTealColor)
             }
             
             Button {} label: {
                 Text(title)
                     .font(.inter(weight: .bold, size: 16))
-                    .foregroundStyle(isSelected ? .white : Color.primaryColor)
+                    .foregroundStyle(isSelected ? .white : Color.red)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 8)
-                    .background(isSelected ? Color.primaryGreenColor : Color.lightGrayColor)
+                    .background(isSelected ? Color.buttonGreenColor : Color.backgroundTealColor)
                     .cornerRadius(8)
             }
             
@@ -36,7 +36,7 @@ struct SubscriptionCard: View {
                 ForEach(features, id: \.self) { feature in
                     HStack {
                         Image(systemName: "checkmark.circle.fill")
-                            .foregroundStyle(Color.primaryGreenColor)
+                            .foregroundStyle(Color.buttonGreenColor)
                         Text(feature)
                             .font(.inter(weight: .regular, size: 14))
                             .foregroundStyle(Color.black.opacity(0.8))
@@ -51,8 +51,9 @@ struct SubscriptionCard: View {
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .overlay {
             RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.primaryGreenColor, lineWidth: isSelected ? 1 : 0)
+                .stroke(Color.buttonGreenColor, lineWidth: isSelected ? 1 : 0)
         }
+        .elevatedShadow()
         .onTapGesture { onTap() }
         .padding(.horizontal)
     }
