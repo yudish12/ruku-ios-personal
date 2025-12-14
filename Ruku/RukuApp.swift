@@ -10,14 +10,15 @@ import SwiftUI
 @main
 struct RukuApp: App {
     @StateObject private var appState = AppStateViewModel()
-    @StateObject private var auth = AuthViewModel()
+    @StateObject private var shieldViewModel = ShieldViewModel()
 
+    
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(appState)
-                .environmentObject(auth)
-        }
+                .environmentObject(shieldViewModel)
+       }
     }
 }
 

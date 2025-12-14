@@ -13,7 +13,8 @@ struct GenderSelector: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Gender")
-                .font(.inter(weight: .bold, size: 20))
+                .font(.inter(weight: .bold, size: 18))
+                .foregroundStyle(.white)
             
             HStack(spacing: 12) {
                 ForEach(Gender.allCases) { gender in

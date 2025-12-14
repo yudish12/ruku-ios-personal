@@ -6,70 +6,101 @@
 //
 
 import SwiftUI
-import Combine
 
 struct LoginScreen: View {
-    @EnvironmentObject private var auth: AuthViewModel
-    
+    @EnvironmentObject var appState: AppStateViewModel
+    @StateObject var authViewModel =  AuthViewModel()
+
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .center, spacing: 20) {
-                    
-                    Image("logo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 250, height: 150)
-                        .padding(.top, 100)
-                    
-                    TextFieldView(title: "Email", placeholderText: "Enter your Email", text: $auth.loginEmail)
-                    
-                    PasswordFieldView(password: $auth.loginPassword)
-                        .padding(.bottom, 20)
-                    
-                    
-                    NavigationLink(
-                        destination: SubscriptionScreen()
-                            .environmentObject(auth)
-                    ) {
-                        Text("Login")
-                            .frame(maxWidth: .infinity)
-                            .font(.inter(weight: .bold, size: 14))
-                            .padding(.vertical, 12)
-                            .background(Color.buttonGreenColor)
-                            .foregroundStyle(Color.white)
-                            .cornerRadius(50)
+            VStack {
+                ScrollView {
+                    VStack(spacing: 24) {
+                        Image("logo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 100)
+                        
+                        Text("Create your account")
+                            .font(.inter(weight: .bold, size: 30))
+                            .foregroundStyle(.white)
+                        
+                        if let error = authViewModel.errorMessage {
+                            Text(error)
+                                .foregroundColor(.red)
+                                .font(.footnote)
+                        }
+
+                        // Toggle Buttons
+                        HStack {
+                            SegmentButton(title: "Sign Up", isSelected: authViewModel.mode == .signup) {
+                                authViewModel.mode = .signup
+                            }
+                            
+                            SegmentButton(title: "Login", isSelected: authViewModel.mode == .login) {
+                                authViewModel.mode = .login
+                            }
+                        }
+                        .padding(2)
+                        .background(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        
+                        // Form Fields
+                        VStack(alignment: .leading, spacing: 16) {
+                            
+                            if authViewModel.mode == .signup {
+                                TextFieldView(title: "Name", placeholderText: "Enter your name", text: $authViewModel.name)
+                                
+                                GenderSelector(selectedGender: $authViewModel.gender)
+                            }
+                            
+                            TextFieldView(title: "Email", placeholderText: "Enter your email", text: $authViewModel.email)
+                            
+                            PasswordFieldView(password: $authViewModel.password)
+                        }
                     }
                 }
-                
-                NavigationLink(
-                    destination: OTPVerificationScreen(email: "yudish@gmail.com")
-                        .environmentObject(auth)
-                ) {
-                    Text("Sign Up")
-                        .frame(maxWidth: .infinity)
-                        .font(.inter(weight: .bold, size: 14))
-                        .padding(.vertical, 12)
-                        .background(Color.buttonGreenColor)
-                        .foregroundStyle(Color.white)
-                        .cornerRadius(50)
+                .scrollBounceBehavior(.basedOnSize)
+                .scrollDismissesKeyboard(.interactively)
+             
+                // Action Button
+                Button{
+                    authViewModel.submit(appState: appState)
+                } label: {
+                    ZStack {
+                          // Keep button size consistent
+                          Text(authViewModel.mode == .signup ? "Sign Up" : "Login")
+                              .font(.inter(weight: .bold, size: 18))
+                              .foregroundColor(.white)
+                              .frame(maxWidth: .infinity)
+                              .padding()
+                              .background(Color.buttonGreenColor)
+                              .clipShape(Capsule())
+                              .opacity(authViewModel.isLoading ? 0 : 1)
+
+                          if authViewModel.isLoading {
+                              ProgressView()
+                                  .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                          }
+                      }
                 }
+                .disabled(!authViewModel.canSubmit || authViewModel.isLoading)
+            
+                PrivacyPolicyRow()
+                    .padding(.top, 8)
             }
-            .padding(.horizontal)
-            .padding(.top, 16)
-            .padding(.bottom, 100)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding()
             .background(Color.backgroundTealColor)
+            .navigationDestination(isPresented: $authViewModel.showOTP) {
+                OTPVerificationScreen(email: authViewModel.email)
+            }
         }
     }
+    
 }
 
-
 #Preview {
-    @Previewable @StateObject var appState = AppStateViewModel()
-    @Previewable @StateObject var auth = AuthViewModel()
-
     LoginScreen()
-        .environmentObject(appState)
-        .environmentObject(auth)
-   
+        .environmentObject(AppStateViewModel())
 }

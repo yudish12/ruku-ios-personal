@@ -23,9 +23,9 @@ struct GenderButton: View {
     var body: some View {
         Button(action: action) {
             Text(gender.rawValue)
-                .font(.inter(weight: .bold, size: 12))
-                .padding(.vertical, 8)
-                .padding(.horizontal, 32)
+                .font(.inter(weight: .medium, size: 18))
+                .padding(.vertical, 4)
+                .padding(.horizontal, 24)
                 .foregroundColor(.white)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
@@ -33,7 +33,7 @@ struct GenderButton: View {
                 )
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.backgroundTealColor, lineWidth: selectedGender == gender ? 0 : 1)
+                        .stroke(Color.buttonGreenColor, lineWidth: selectedGender == gender ? 0 : 1)
                 )
         }
     }

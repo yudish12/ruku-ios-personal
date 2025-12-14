@@ -1,5 +1,5 @@
 //
-//  SubscriptionScreen.swift
+//  SubscriptionView.swift
 //  Ruku
 //
 //  Created by Vishal Singh on 11/12/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SubscriptionScreen: View {
+struct SubscriptionView: View {
     @State private var selected: String? = nil
     
     var body: some View {
@@ -60,11 +60,11 @@ struct SubscriptionScreen: View {
                     .padding(.top, 12)
             }
             .scrollBounceBehavior(.basedOnSize)
-            .background(Color.backgroundTealColor)
+            .background(Color.textPrimaryColor)
             .navigationTitle("Subscription")
     }
 }
 
 #Preview {
-    SubscriptionScreen()
+    SubscriptionView()
 }

@@ -15,7 +15,7 @@ enum RootScreen {
 class AppStateViewModel: ObservableObject {
     @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding = false
     @AppStorage("hasAllowOrPermission") var hasAllowOrPermission = false
-    @AppStorage("hasCreatedOrSkipProfile") var hasCreatedOrSkipProfile = false
+    @AppStorage("isUserLoggedIn") var isUserLoggedIn = false
     
     @Published var currentPage: Int = 0
     
@@ -27,8 +27,8 @@ class AppStateViewModel: ObservableObject {
         hasAllowOrPermission = true
     }
     
-    func completedOrSkipProfile() {
-        hasCreatedOrSkipProfile = true
+    func userLoggedIn() {
+        isUserLoggedIn = true
     }
     
     func canGoNextPage() -> Bool {
@@ -48,7 +48,7 @@ class AppStateViewModel: ObservableObject {
             return .onboarding
         } else if !hasAllowOrPermission {
             return .permission
-        } else if !hasCreatedOrSkipProfile {
+        } else if !isUserLoggedIn {
             return .login
         } else {
             return .home
