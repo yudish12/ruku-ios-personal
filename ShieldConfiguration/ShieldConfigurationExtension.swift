@@ -32,10 +32,13 @@ class ShieldConfigurationExtension: ShieldConfigurationDataSource {
     private func customShieldConfiguration() -> ShieldConfiguration {
         return ShieldConfiguration(
             backgroundBlurStyle: .systemMaterialDark,
-            backgroundColor: .black,
+            backgroundColor: UIColor(red: 12/255, green: 62/255, blue: 62/255, alpha: 1),
             icon: emojiToImage("🙏"),
             title: ShieldConfiguration.Label(text: "Pause and Pray!", color: .white),
-            subtitle: ShieldConfiguration.Label(text: " Take a moment to reflect and reconnect with your faith before diving into PrayScreen.\n\nOpen PrayScreen to complete your daily prayer 🙏", color: .white),
+            subtitle: ShieldConfiguration.Label(
+                text: " Take a moment to reflect and reconnect with your faith before diving into PrayScreen.\n\nOpen PrayScreen to complete your daily prayer 🙏",
+                color: .white
+            ),
             primaryButtonLabel: ShieldConfiguration.Label(text: "Ok", color: .black),
             primaryButtonBackgroundColor: .white
         )

@@ -96,12 +96,12 @@ struct HomeScreen: View {
             
             // MARK: - Confirm Prayer Button
             Button {
-                shieldViewModel.applyShield()
                 withAnimation(.easeInOut(duration: 0.5)) {
+                       shieldViewModel.applyShield()
                        isBlocked = true
                    }
             } label: {
-                Text("Confirm Prayer")
+                Text("Apply shield for testing")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
