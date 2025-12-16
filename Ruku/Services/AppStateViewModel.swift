@@ -43,6 +43,10 @@ final class AppStateViewModel: ObservableObject {
     /// (Subscription + Salah Timing + App Block)
     @AppStorage("hasCompletedInitialSetup")
     var hasCompletedInitialSetup: Bool = false
+    
+    @AppStorage("isFirstLaunch")
+    var isFirstLaunch: Bool = true
+
 
     // MARK: - Onboarding UI State
     @Published var currentPage: Int = 0
@@ -54,6 +58,7 @@ final class AppStateViewModel: ObservableObject {
             currentPage += 1
         } else {
             hasCompletedIntro = true
+            isFirstLaunch = false
         }
     }
     
@@ -63,8 +68,8 @@ final class AppStateViewModel: ObservableObject {
 
     // MARK: - Permissions
 
-    func grantRequiredPermissions() {
-        hasGrantedRequiredPermissions = true
+    func grantRequiredPermissions(_ isGranted: Bool = true) {
+        hasGrantedRequiredPermissions = isGranted
     }
 
     // MARK: - Authentication

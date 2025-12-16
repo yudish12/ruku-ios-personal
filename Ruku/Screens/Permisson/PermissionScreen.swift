@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PermissionScreen: View {
     @EnvironmentObject private var appState: AppStateViewModel
-    @StateObject private var permissionManager = PermissionManager()
+    @EnvironmentObject private var permissionManager: PermissionManager
     
     var body: some View {
        
@@ -84,7 +84,7 @@ struct PermissionScreen: View {
 
 
 #Preview {
-    @Previewable var appState = AppStateViewModel()
     PermissionScreen()
-        .environmentObject(appState)
+        .environmentObject(AppStateViewModel())
+        .environmentObject(PermissionManager())
 }

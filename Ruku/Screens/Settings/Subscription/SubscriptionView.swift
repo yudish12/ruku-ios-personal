@@ -13,23 +13,6 @@ struct SubscriptionView: View {
     
     var body: some View {
         VStack {
-//            if showCrossButton {
-//                HStack {
-//                    Spacer()
-//                    
-//                    NavigationLink(destination: EditSalahTimingsView()) {
-//                        Image(systemName: "xmark")
-//                            .font(.system(size: 20, weight: .medium))
-//                            .padding(8)
-//                            .background(.white)
-//                            .foregroundColor(Color.buttonGreenColor)
-//                            .clipShape(Circle())
-//                    }
-//                    
-//                }
-//                .padding()
-//            }
-            
             HStack {
                 SegmentButton(
                     title: SubscriptionType.monthly.rawValue,
@@ -47,6 +30,7 @@ struct SubscriptionView: View {
             .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(.bottom, 30)
+            .padding(.top, 12)
             
             
             SubscriptionCard(
@@ -96,10 +80,6 @@ struct SubscriptionView: View {
                             .font(.system(size: 20, weight: .medium))
                             .padding(.vertical, 8)
                             .padding(.horizontal, 16)
-//                            .background(.white)
-//                            .foregroundColor(Color.buttonGreenColor)
-//                            .overlay {
-//                                RoundedRectangle(cornerRadius: 12)}
                     }
                 }
             }

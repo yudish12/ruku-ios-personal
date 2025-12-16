@@ -34,6 +34,12 @@
 		C98D34F52EE8C7210029E05D /* GenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D34F32EE8C7210029E05D /* GenderButton.swift */; };
 		C98D35012EE946060029E05D /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D35002EE946060029E05D /* TextFieldView.swift */; };
 		C98D35032EE946AA0029E05D /* GenderSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D35022EE946AA0029E05D /* GenderSelector.swift */; };
+		C99DC79A2EF1DAE0002E7549 /* SalahTimingsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99DC7972EF1DAE0002E7549 /* SalahTimingsAPI.swift */; };
+		C99DC79B2EF1DAE0002E7549 /* TimingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99DC7982EF1DAE0002E7549 /* TimingsModel.swift */; };
+		C99DC7A02EF1DB7D002E7549 /* SalahTimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99DC79F2EF1DB7D002E7549 /* SalahTimeRow.swift */; };
+		C99DC7A22EF1DE47002E7549 /* TimePickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99DC7A12EF1DE47002E7549 /* TimePickerSheet.swift */; };
+		C99DC7A42EF1E134002E7549 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99DC7A32EF1E134002E7549 /* Date+Extension.swift */; };
+		C99DC7A72EF1E42E002E7549 /* SalahViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99DC7A62EF1E42E002E7549 /* SalahViewModel.swift */; };
 		C9D082022EEF02190068530A /* SettingsVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D082012EEF02190068530A /* SettingsVIew.swift */; };
 		C9D082052EEF31020068530A /* ManageBlockedAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D082042EEF31020068530A /* ManageBlockedAppsView.swift */; };
 		C9D082072EEF310D0068530A /* EditSalahTimingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D082062EEF310D0068530A /* EditSalahTimingsView.swift */; };
@@ -136,6 +142,12 @@
 		C98D35002EE946060029E05D /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		C98D35022EE946AA0029E05D /* GenderSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelector.swift; sourceTree = "<group>"; };
 		C99DC78D2EF1678F002E7549 /* Ruku.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ruku.entitlements; sourceTree = "<group>"; };
+		C99DC7972EF1DAE0002E7549 /* SalahTimingsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahTimingsAPI.swift; sourceTree = "<group>"; };
+		C99DC7982EF1DAE0002E7549 /* TimingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingsModel.swift; sourceTree = "<group>"; };
+		C99DC79F2EF1DB7D002E7549 /* SalahTimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahTimeRow.swift; sourceTree = "<group>"; };
+		C99DC7A12EF1DE47002E7549 /* TimePickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerSheet.swift; sourceTree = "<group>"; };
+		C99DC7A32EF1E134002E7549 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		C99DC7A62EF1E42E002E7549 /* SalahViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahViewModel.swift; sourceTree = "<group>"; };
 		C9D082012EEF02190068530A /* SettingsVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVIew.swift; sourceTree = "<group>"; };
 		C9D082042EEF31020068530A /* ManageBlockedAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageBlockedAppsView.swift; sourceTree = "<group>"; };
 		C9D082062EEF310D0068530A /* EditSalahTimingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSalahTimingsView.swift; sourceTree = "<group>"; };
@@ -196,11 +208,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		BD7F94F22EF1C9DA00E27A5B /* FetchTimings */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FetchTimings;
-			sourceTree = "<group>";
-		};
 		C9D082222EEF439A0068530A /* ShieldConfiguration */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -377,10 +384,55 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		C99DC7992EF1DAE0002E7549 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C99DC7972EF1DAE0002E7549 /* SalahTimingsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C99DC79C2EF1DB17002E7549 /* Salah Time */ = {
+			isa = PBXGroup;
+			children = (
+				C99DC7A52EF1E426002E7549 /* ViewModel */,
+				C99DC79E2EF1DB5B002E7549 /* Components */,
+				C99DC7992EF1DAE0002E7549 /* API */,
+				C99DC79D2EF1DB43002E7549 /* Model */,
+				C9D082062EEF310D0068530A /* EditSalahTimingsView.swift */,
+				C99DC7A12EF1DE47002E7549 /* TimePickerSheet.swift */,
+			);
+			path = "Salah Time";
+			sourceTree = "<group>";
+		};
+		C99DC79D2EF1DB43002E7549 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C99DC7982EF1DAE0002E7549 /* TimingsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C99DC79E2EF1DB5B002E7549 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C99DC79F2EF1DB7D002E7549 /* SalahTimeRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C99DC7A52EF1E426002E7549 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C99DC7A62EF1E42E002E7549 /* SalahViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C9D082032EEF30F20068530A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				BD7F94F22EF1C9DA00E27A5B /* FetchTimings */,
+				C99DC79C2EF1DB17002E7549 /* Salah Time */,
 				C92E83692EEAEA80002BB4C7 /* Subscription */,
 				C9D082012EEF02190068530A /* SettingsVIew.swift */,
 				C9D082142EEF3C0D0068530A /* SettingsRow.swift */,
@@ -390,7 +442,6 @@
 				C9D0820C2EEF31720068530A /* NotificationsView.swift */,
 				C9D0820A2EEF31240068530A /* EditProfileView.swift */,
 				C9D082082EEF31140068530A /* BypassModeView.swift */,
-				C9D082062EEF310D0068530A /* EditSalahTimingsView.swift */,
 				C9D082042EEF31020068530A /* ManageBlockedAppsView.swift */,
 			);
 			path = Settings;
@@ -410,6 +461,7 @@
 			children = (
 				C9F1A8982EE89ED300712D8F /* ViewModifiers */,
 				C9F1A8392EE84E3D00712D8F /* Color+Extension.swift */,
+				C99DC7A32EF1E134002E7549 /* Date+Extension.swift */,
 				C9F1A83A2EE84E3D00712D8F /* Font+Extension.swift */,
 				C9F1A8832EE8976900712D8F /* View+Extension.swift */,
 				C96C2C762EEDEC5200DEBBF3 /* Encodable+Extension.swift */,
@@ -507,9 +559,6 @@
 			);
 			dependencies = (
 				C9D082282EEF439A0068530A /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				BD7F94F22EF1C9DA00E27A5B /* FetchTimings */,
 			);
 			name = Ruku;
 			packageProductDependencies = (
@@ -630,6 +679,8 @@
 				C986D7222EECB7A400AC3613 /* PermissionInfo.swift in Sources */,
 				C9F1A88D2EE89ECA00712D8F /* PermissionScreen.swift in Sources */,
 				C9F1A8542EE84E3D00712D8F /* Color+Extension.swift in Sources */,
+				C99DC7A72EF1E42E002E7549 /* SalahViewModel.swift in Sources */,
+				C99DC7A02EF1DB7D002E7549 /* SalahTimeRow.swift in Sources */,
 				C96C2C722EEDEB3F00DEBBF3 /* AuthAPI.swift in Sources */,
 				C98D34F52EE8C7210029E05D /* GenderButton.swift in Sources */,
 				C96C2C702EEDE9B000DEBBF3 /* TokenStorage.swift in Sources */,
@@ -660,6 +711,7 @@
 				C9F1A8962EE89ECE00712D8F /* AppStateViewModel.swift in Sources */,
 				C92E836C2EEAEAA3002BB4C7 /* SubscriptionCard.swift in Sources */,
 				C92E83B32EEBEBBB002BB4C7 /* LoginScreen.swift in Sources */,
+				C99DC7A22EF1DE47002E7549 /* TimePickerSheet.swift in Sources */,
 				C98D34F02EE8C28F0029E05D /* HomeScreen.swift in Sources */,
 				C9DABABA2EEED8B000B5ED96 /* SalahMode.swift in Sources */,
 				C986D7142EEC164100AC3613 /* AuthViewModel.swift in Sources */,
@@ -668,6 +720,9 @@
 				C92E83B52EEBEBC9002BB4C7 /* OTPVerificationScreen.swift in Sources */,
 				C9F1A8842EE8976900712D8F /* View+Extension.swift in Sources */,
 				C96C2C362EED99BE00DEBBF3 /* LoginView.swift in Sources */,
+				C99DC79A2EF1DAE0002E7549 /* SalahTimingsAPI.swift in Sources */,
+				C99DC79B2EF1DAE0002E7549 /* TimingsModel.swift in Sources */,
+				C99DC7A42EF1E134002E7549 /* Date+Extension.swift in Sources */,
 				C9F1A8572EE84E3D00712D8F /* RukuApp.swift in Sources */,
 				C96C2C412EEDAB6C00DEBBF3 /* SegmentButton.swift in Sources */,
 			);
@@ -822,7 +877,7 @@
 				CODE_SIGN_ENTITLEMENTS = Ruku/Ruku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6GMWFC38DP;
+				DEVELOPMENT_TEAM = RGJ5SHWS69;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ruku/Info.plist;
@@ -858,7 +913,7 @@
 				CODE_SIGN_ENTITLEMENTS = Ruku/Ruku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6GMWFC38DP;
+				DEVELOPMENT_TEAM = RGJ5SHWS69;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ruku/Info.plist;
