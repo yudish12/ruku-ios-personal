@@ -26,7 +26,7 @@ struct OnboardingView: View {
             Button {
                 appState.nextOnboardingPage()
             } label: {
-                Text(appState.canGoNextPage() ? "Next" : "Continue")
+                Text(appState.canGoNextOnboardingPage() ? "Next" : "Continue")
                     .frame(maxWidth: .infinity)
                     .font(.inter(weight: .bold, size: 14))
                     .padding(.vertical, 12)

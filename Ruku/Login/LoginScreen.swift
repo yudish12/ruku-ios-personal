@@ -70,10 +70,10 @@ struct LoginScreen: View {
                     ZStack {
                           // Keep button size consistent
                           Text(authViewModel.mode == .signup ? "Sign Up" : "Login")
-                              .font(.inter(weight: .bold, size: 18))
+                              .font(.inter(weight: .medium, size: 16))
                               .foregroundColor(.white)
                               .frame(maxWidth: .infinity)
-                              .padding()
+                              .padding(.vertical, 8)
                               .background(Color.buttonGreenColor)
                               .clipShape(Capsule())
                               .opacity(authViewModel.isLoading ? 0 : 1)
@@ -85,15 +85,27 @@ struct LoginScreen: View {
                       }
                 }
                 .disabled(!authViewModel.canSubmit || authViewModel.isLoading)
+                
+                NavigationLink(destination: SubscriptionView(showCrossButton: true)) {
+                    Text("Skip")
+                        .frame(maxWidth: .infinity)
+                        .font(.inter(weight: .medium, size: 16))
+                        .foregroundStyle(.white)
+                        .padding(.vertical, 8)
+                        .background(Color.buttonGreenColor)
+                        .clipShape(Capsule())
+                }
+                .padding(.bottom, 8)
+
             
                 PrivacyPolicyRow()
-                    .padding(.top, 8)
+                    
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding()
+            .padding(.horizontal)
             .background(Color.backgroundTealColor)
-            .navigationDestination(isPresented: $authViewModel.showOTP) {
-                OTPVerificationScreen(email: authViewModel.email)
+            .navigationDestination(isPresented: $authViewModel.showOTPView) {
+                OTPVerificationScreen(viewModel: authViewModel)
             }
         }
     }

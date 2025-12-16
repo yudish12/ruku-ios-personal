@@ -18,7 +18,7 @@ struct SegmentButton: View {
             Text(title)
                 .font(.inter(weight: .bold, size: 18))
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 12)
+                .padding(.vertical, 8)
                 .padding(.horizontal, 50)
                 .background(isSelected ? Color.buttonGreenColor : Color.white)
                 .foregroundColor(isSelected ? .white: Color.buttonGreenColor)

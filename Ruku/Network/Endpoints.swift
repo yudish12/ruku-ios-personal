@@ -10,5 +10,6 @@ import Foundation
 enum Endpoints: String {
     case login    = "users/login"
     case register = "users/register"
-    case profile  = "user/profile"
+    case verifyOtp  = "users/verify-email"
+    case salahTiming = "aladhan/timings"
 }

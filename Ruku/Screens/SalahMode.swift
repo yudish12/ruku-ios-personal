@@ -44,7 +44,8 @@ struct SalahMode: View {
                 }
                 
                 Button {
-                    // Do SOmeting
+                    shieldViewModel.removeShield()
+                    isBlocked = false
                 } label: {
                     Text("Salah is not obligatory for me")
                         .frame(maxWidth: .infinity)

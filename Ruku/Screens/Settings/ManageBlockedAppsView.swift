@@ -9,6 +9,7 @@ import SwiftUI
 import FamilyControls
 
 struct ManageBlockedAppsView: View {
+    @EnvironmentObject var appState: AppStateViewModel
     @EnvironmentObject var shieldViewModel: ShieldViewModel
 
     var body: some View {
@@ -16,9 +17,21 @@ struct ManageBlockedAppsView: View {
             FamilyActivityPicker(selection: $shieldViewModel.selection)
                 .frame(maxHeight: .infinity)
 
+            Button {
+                appState.completeInitialSetup()
+            } label: {
+                Text("Save")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 16)
+                    .background(Color.buttonGreenColor)
+                    .clipShape(Capsule())
+            }
+            .padding(.horizontal)
         }
-        .ignoresSafeArea(edges: .all)
-        .navigationTitle("Blocked Apps")
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        
     }
 }
 
@@ -26,4 +39,5 @@ struct ManageBlockedAppsView: View {
 #Preview {
     ManageBlockedAppsView()
         .environmentObject(ShieldViewModel())
+        .environmentObject(AppStateViewModel())
 }

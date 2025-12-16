@@ -8,8 +8,14 @@ struct RootView: View {
         case .onboarding: OnboardingView()
         case .permission: PermissionScreen()
         case .login: LoginScreen()
-        case .subscription: SubscriptionView()
+        case .initialSetup: subscriptionView(showCrossButton: true)
         case .home: HomeScreen()
+        }
+    }
+    
+    private func subscriptionView(showCrossButton: Bool) -> some View {
+        NavigationStack {
+            SubscriptionView(showCrossButton: showCrossButton)
         }
     }
 }

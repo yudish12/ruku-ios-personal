@@ -21,6 +21,12 @@ class PermissionManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var isLocationAuthorized: Bool = false
     @Published var lastError: Error? = nil
     
+    // Computed property to check if all permissions are granted
+    var allPermissionsGranted: Bool {
+        isFamilyControlAuthorized && isNotificationAuthorized && isLocationAuthorized
+    }
+
+    
     // MARK: - Private properties
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()

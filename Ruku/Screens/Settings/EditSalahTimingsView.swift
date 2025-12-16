@@ -8,26 +8,43 @@
 import SwiftUI
 
 struct EditSalahTimingsView: View {
-    @AppStorage("salahStartTime") private var salahStartTime: Date = .now
-
+    var isInitialSetup = false
+    
     var body: some View {
-        ScrollView {
-           Text("Manually adjust prayer times if needed.")
-                .foregroundStyle(Color.textSecondaryColor)
-            
-            VStack {
+        VStack {
+            ScrollView {
+                Text("Manually adjust prayer times if needed.")
+                    .foregroundStyle(.white)
                 
+                VStack {
+                    
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
             }
-            .frame(maxWidth: .infinity)
-            .padding()
+            .scrollBounceBehavior(.basedOnSize)
+            
+            if isInitialSetup {
+                NavigationLink(destination: ManageBlockedAppsView()) {
+                    Text("Save Changes")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .background(Color.buttonGreenColor)
+                        .clipShape(Capsule())
+                }
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.backgroundColor)
+        .padding(.horizontal)
+        .background(Color.backgroundTealColor)
+        .toolbarColorScheme(.dark, for: .navigationBar)
         .navigationTitle("Salah Time Adjustment")
     }
 }
 
 
 #Preview {
-    EditSalahTimingsView()
+    EditSalahTimingsView(isInitialSetup: true)
 }

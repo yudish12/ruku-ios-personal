@@ -1,60 +1,118 @@
 //
-//  OnboardingViewModel.swift
+//  AppStateViewModel.swift
 //  Ruku
 //
-//  Created by Vishal Singh on 09/12/25.
+//  Created by Vishal Singh
 //
 
 import SwiftUI
 import Combine
 
+// MARK: - Root Navigation Screens
 enum RootScreen {
-    case onboarding, permission, login, subscription, home
+    case onboarding
+    case permission
+    case login
+    case initialSetup   // Subscription + Salah Timing + App Block
+    case home
 }
 
-class AppStateViewModel: ObservableObject {
-    @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding = false
-    @AppStorage("hasAllowOrPermission") var hasAllowOrPermission = false
-    @AppStorage("isUserLoggedIn") var isUserLoggedIn = false
-    
+// MARK: - App State ViewModel
+@MainActor
+final class AppStateViewModel: ObservableObject {
+
+    // MARK: - Persistent App State
+
+    /// User has completed onboarding screens
+    @AppStorage("hasCompletedIntro")
+    var hasCompletedIntro: Bool = false
+
+    /// User has granted all required permissions
+    @AppStorage("hasGrantedRequiredPermissions")
+    var hasGrantedRequiredPermissions: Bool = false
+
+    /// User is authenticated (login / OTP verified)
+    @AppStorage("isUserAuthenticated")
+    var isUserAuthenticated: Bool = false
+
+    /// User intentionally skipped authentication
+    @AppStorage("didUserSkipAuthentication")
+    var didUserSkipAuthentication: Bool = false
+
+    /// User completed mandatory first-time setup
+    /// (Subscription + Salah Timing + App Block)
+    @AppStorage("hasCompletedInitialSetup")
+    var hasCompletedInitialSetup: Bool = false
+
+    // MARK: - Onboarding UI State
     @Published var currentPage: Int = 0
-    
-    private func completeOnboarding() {
-        hasCompletedOnboarding = true
-    }
-    
-    func allowPermission() {
-        hasAllowOrPermission = true
-    }
-    
-    func userLoggedIn() {
-        isUserLoggedIn = true
-    }
-    
-    func canGoNextPage() -> Bool {
-        currentPage < OnboardingPage.allCases.count - 1
-    }
-    
+
+    // MARK: - Onboarding Logic
+
     func nextOnboardingPage() {
-        if canGoNextPage() {
+        if canGoNextOnboardingPage() {
             currentPage += 1
         } else {
-            completeOnboarding()
+            hasCompletedIntro = true
         }
     }
     
+    func canGoNextOnboardingPage() -> Bool {
+        currentPage < OnboardingPage.allCases.count - 1
+    }
+
+    // MARK: - Permissions
+
+    func grantRequiredPermissions() {
+        hasGrantedRequiredPermissions = true
+    }
+
+    // MARK: - Authentication
+
+    func authenticateUser(_ isAuthenticated: Bool = true) {
+        isUserAuthenticated = isAuthenticated
+    }
+
+    func skipAuthentication(_ isSkipping: Bool = true) {
+        didUserSkipAuthentication = isSkipping
+    }
+
+    // MARK: - Initial Setup Flow
+
+    /// Call this when Subscription + Salah Timing + App Block is finished
+    func completeInitialSetup(_ completed: Bool = true) {
+        hasCompletedInitialSetup = completed
+        isUserAuthenticated = completed
+    }
+
+    // MARK: - Logout (Optional but recommended)
+
+    func logout(_ isLoggingOut: Bool = true) {
+        isUserAuthenticated = isLoggingOut
+        didUserSkipAuthentication = isLoggingOut
+        hasCompletedInitialSetup = isLoggingOut
+    }
+
+    // MARK: - Root Navigation Decision
+
     var currentRoot: RootScreen {
-        if !hasCompletedOnboarding {
+        if !hasCompletedIntro {
             return .onboarding
-        } else if !hasAllowOrPermission {
-            return .permission
-        } else if !isUserLoggedIn {
-            return .login
-        } else {
-            return .home
         }
+
+        if !hasGrantedRequiredPermissions {
+            return .permission
+        }
+
+        if !isUserAuthenticated && !didUserSkipAuthentication {
+            return .login
+        }
+
+        if !hasCompletedInitialSetup {
+            return .initialSetup
+        }
+
+        return .home
     }
 }
-
-
 

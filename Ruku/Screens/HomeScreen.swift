@@ -80,7 +80,7 @@ struct HomeScreen: View {
                     .foregroundColor(.primary)
                 
                 Button {
-                    appState.isUserLoggedIn = false
+                    appState.authenticateUser(false)
                 } label: {
                     Text("Back to Login")
                         .font(.headline)

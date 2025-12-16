@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-enum Gender: String, CaseIterable, Identifiable {
-    case male = "Male"
-    case female = "Female"
-    case others = "Others"
-    
-    var id: String { rawValue }
-}
-
 struct GenderButton: View {
     let gender: Gender
     @Binding var selectedGender: Gender
@@ -22,7 +14,7 @@ struct GenderButton: View {
     
     var body: some View {
         Button(action: action) {
-            Text(gender.rawValue)
+            Text(gender.displayName)
                 .font(.inter(weight: .medium, size: 18))
                 .padding(.vertical, 4)
                 .padding(.horizontal, 24)

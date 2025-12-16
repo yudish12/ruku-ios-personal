@@ -1,23 +1,24 @@
 import SwiftUI
 
+enum SubscriptionType: String {
+    case monthly = "Monthly"
+    case yearly = "Yearly"
+}
+
 struct SubscriptionCard: View {
     let title: String
     let price: String
     let features: [String]
-    let isSelected: Bool
-    let onTap: () -> Void
+    let subscriptionType: SubscriptionType
+   
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(title)
-                .font(.inter(weight: .bold, size: 16))
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
             HStack(alignment: .firstTextBaseline, spacing: 2) {
                 Text(price)
                     .font(.inter(weight: .black, size: 30))
                 
-                Text("/ month")
+                Text("/\(title)")
                     .font(.inter(weight: .medium, size: 16))
                     .foregroundStyle(Color.backgroundTealColor)
             }
@@ -25,10 +26,10 @@ struct SubscriptionCard: View {
             Button {} label: {
                 Text(title)
                     .font(.inter(weight: .bold, size: 16))
-                    .foregroundStyle(isSelected ? .white : Color.red)
+                    .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 8)
-                    .background(isSelected ? Color.buttonGreenColor : Color.backgroundTealColor)
+                    .background(Color.buttonGreenColor)
                     .cornerRadius(8)
             }
             
@@ -49,27 +50,24 @@ struct SubscriptionCard: View {
         .padding()
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 12))
-        .overlay {
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.buttonGreenColor, lineWidth: isSelected ? 1 : 0)
-        }
         .elevatedShadow()
-        .onTapGesture { onTap() }
-        .padding(.horizontal)
     }
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
+    @Previewable let subscription: SubscriptionType = .monthly
     SubscriptionCard(
-        title: "Free",
-        price: "$4.99",
+        title: subscription == .monthly ? "Month" : "Year",
+        price: subscription == .monthly ?  "$4.99" :"$28.99",
         features: [
-            "Block up to 3 apps",
-            "Standard Salah reminders",
-            "Basic focus session"
+            "Unlimited app blocking",
+            "Advanced Salah reminders",
+            "Advanced focus session",
+            "Custom themes",
+            "Detailed analytics"
         ],
-        isSelected: false,
-        onTap: {}
+        subscriptionType: subscription
     )
     .padding()
+    .background(Color.backgroundTealColor)
 }

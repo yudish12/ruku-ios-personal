@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct OTPVerificationScreen: View {
-    
-    @StateObject private var viewModel =  OTPViewModel()
+    @EnvironmentObject private var appState: AppStateViewModel
+    @StateObject var viewModel: AuthViewModel
     @FocusState private var focusedIndex: Int?
-    let email: String
     
     var body: some View {
         VStack(spacing: 32) {
-            Text("We have sent an OTP to your\nemail: \(email)")
+            Text("We have sent an OTP to your\nemail: \(viewModel.email)")
                 .frame(maxWidth: .infinity, alignment: .center)
                 .multilineTextAlignment(.center)
                 .font(.inter(weight: .regular, size: 14))
@@ -37,17 +36,28 @@ struct OTPVerificationScreen: View {
             }
             
             // MARK: - Verify Button
+            
             Button {
-                viewModel.verifyOTP()
+                Task {
+                    await viewModel.verifyOTP(appState: appState)
+                }
             } label: {
-                Text("Verify")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(viewModel.otp.joined().count == viewModel.otp.count ? Color.buttonGreenColor : Color.buttonGreenColor.opacity(0.5))
-                    .foregroundColor(.white)
-                    .clipShape(Capsule())
+                ZStack {
+                    Text("Verify")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(viewModel.otp.joined().count == viewModel.otp.count ? Color.buttonGreenColor : Color.buttonGreenColor.opacity(0.5))
+                        .foregroundColor(.white)
+                        .clipShape(Capsule())
+                        .opacity(viewModel.isLoading ? 0 : 1)
+                    
+                    if viewModel.isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                    }
+                }
             }
-            .disabled(viewModel.otp.joined().count != viewModel.otp.count)
+            .disabled(viewModel.otp.joined().count != viewModel.otp.count || viewModel.isLoading)
             
             // MARK: - Resend OTP
             if !viewModel.canResend {
@@ -86,6 +96,6 @@ struct OTPVerificationScreen: View {
 }
 
 #Preview {
-    OTPVerificationScreen(email: "yudish@gmail.com")
+    OTPVerificationScreen(viewModel: AuthViewModel())
 }
 

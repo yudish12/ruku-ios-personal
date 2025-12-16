@@ -61,16 +61,17 @@ struct PermissionScreen: View {
             .scrollBounceBehavior(.basedOnSize)
             
             Button {
-                appState.allowPermission()
+                appState.grantRequiredPermissions()
             } label: {
                 Text("Continue to RUKU")
                     .font(.inter(weight: .bold, size: 16))
-                    .padding()
+                    .padding(.vertical, 12)
                     .frame(maxWidth: .infinity)
-                    .background(Color.buttonGreenColor)
+                    .background(permissionManager.allPermissionsGranted ? Color.buttonGreenColor : Color.gray)
                     .foregroundColor(.white)
                     .clipShape(Capsule())
             }
+            .disabled(!permissionManager.allPermissionsGranted)
             
             PrivacyPolicyRow()
                 .padding(.top, 8)
