@@ -11,19 +11,17 @@ final class DeviceActivityMonitorExtension: DeviceActivityMonitor {
     )
 
     override func intervalDidStart(for activity: DeviceActivityName) {
-        NSLog("🚨 Activity: %@", activity.rawValue)
+        NSLog("Starting shield for activity: %@", activity.rawValue)
 
         let selection = ShieldStore.shared.selection
-        NSLog("🚨 App tokens count: %d", selection.applicationTokens.count)
 
         store.shield.applications = selection.applicationTokens
         defaults?.set(true, forKey: "isBlockingActive")
 
-        NSLog("🚨 SHIELD APPLIED 🚨")
     }
 
     override func intervalDidEnd(for activity: DeviceActivityName) {
-        NSLog("🚨🚨🚨 EXTENSION ENDED 🚨🚨🚨")
+        NSLog("end blocking now")
         store.shield.applications = nil
         defaults?.set(false, forKey: "isBlockingActive")
     }

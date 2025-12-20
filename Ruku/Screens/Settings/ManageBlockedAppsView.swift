@@ -32,10 +32,10 @@ struct ManageBlockedAppsView: View {
     }
     
     private func scheduleShieldForSavedSalahTimes() {
-        // 1️⃣ Save blocked apps for extension
+        // Save blocked apps for extension
         ShieldStore.shared.selection = shieldViewModel.selection
 
-        // 2️⃣ Load saved Salah times (WHEN)
+        // Load saved Salah times (WHEN)
         let salahTimes = SalahTimeStore.shared.loadTimes()
 
         guard !salahTimes.isEmpty else {
@@ -43,7 +43,7 @@ struct ManageBlockedAppsView: View {
             return
         }
 
-        // 3️⃣ Schedule each Salah
+        // Schedule each Salah
         for salah in salahTimes {
             SalahScheduleManager.shared.scheduleSalah(
                 activity: activityName(for: salah.title),
@@ -113,24 +113,19 @@ struct ManageBlockedAppsView: View {
                     Spacer()
 
                     Button {
-                        print("💾 Save button tapped")
-                        print("💾 Apps before save: \(shieldViewModel.selection.applicationTokens.count)")
-                        print("💾 Categories before save: \(shieldViewModel.selection.categoryTokens.count)")
-                        
+                      
                         // Clear any existing feedback
                         feedbackMessage = nil
                         
                         let appsBeforeEnforcement = shieldViewModel.selection.applicationTokens.count
                         enforceAppLimit()
-                        print("💾 Apps after enforcement: \(shieldViewModel.selection.applicationTokens.count)")
-                        print("💾 Categories after enforcement: \(shieldViewModel.selection.categoryTokens.count)")
                         
                         let finalCount = shieldViewModel.selection.applicationTokens.count
                         
                         // Only proceed if we have apps to save
                         if finalCount > 0 {
                             scheduleShieldForSavedSalahTimes()
-//                            shieldViewModel.applyShield()
+                            // shieldViewModel.applyShield()
                             appState.completeInitialSetup()
                             
                             // Only show success if limit wasn't enforced (limit enforced message already shown)
@@ -250,23 +245,16 @@ struct ManageBlockedAppsView: View {
         }
         // Observe selection changes in real-time
         .onChange(of: shieldViewModel.selection.applicationTokens.count) { oldCount, newCount in
-            print("🔄 Apps count changed: \(oldCount) -> \(newCount)")
             if !showingPicker && newCount > 0 {
                 // Selection changed while picker is closed (after dismissal)
-                print("🔄 Selection updated after picker closed")
             }
         }
         .onChange(of: shieldViewModel.selection.categoryTokens.count) { oldCount, newCount in
-            print("🔄 Categories count changed: \(oldCount) -> \(newCount)")
+            print("Categories count changed: \(oldCount) -> \(newCount)")
         }
         // Observe when picker closes to enforce limit
         .onChange(of: showingPicker) { oldValue, newValue in
             if !newValue && oldValue {
-                // Picker just closed (was true, now false)
-                print("📱 Picker just closed")
-                print("📱 Initial check - Apps: \(self.shieldViewModel.selection.applicationTokens.count), Categories: \(self.shieldViewModel.selection.categoryTokens.count)")
-                print("📱 Waiting for selection to update...")
-                
                 // Check multiple times with increasing delays to catch the binding update
                 let delays: [TimeInterval] = [0.3, 0.6, 1.0]
                 for (index, delay) in delays.enumerated() {
@@ -274,7 +262,6 @@ struct ManageBlockedAppsView: View {
                         let appsCount = self.shieldViewModel.selection.applicationTokens.count
                         let categoriesCount = self.shieldViewModel.selection.categoryTokens.count
                         
-                        print("📱 Check #\(index + 1) after \(delay)s - Apps: \(appsCount), Categories: \(categoriesCount)")
                         
                         // Enforce on the last check or if we detect selections
                         if index == delays.count - 1 || (appsCount > 0 || categoriesCount > 0) {
@@ -289,9 +276,9 @@ struct ManageBlockedAppsView: View {
                 }
             } else if newValue {
                 // Picker is opening
-                print("📱 Picker opening")
-                print("📱 Current apps: \(self.shieldViewModel.selection.applicationTokens.count)")
-                print("📱 Current categories: \(self.shieldViewModel.selection.categoryTokens.count)")
+                print("Picker opening")
+                print("Current apps: \(self.shieldViewModel.selection.applicationTokens.count)")
+                print("Current categories: \(self.shieldViewModel.selection.categoryTokens.count)")
             }
         }
 
@@ -331,26 +318,24 @@ To ensure your preferred apps are blocked, please select only 3 apps from the Sc
         let tokens = Array(currentApps)
         let categoriesCount = currentCategories.count
         
-        print("🔍 ========== ENFORCE APP LIMIT ==========")
-        print("🔍 Current apps count: \(tokens.count)")
-        print("🔍 Current categories count: \(categoriesCount)")
-        print("🔍 Max apps allowed: \(maxAppsCount)")
+        print(" ========== ENFORCE APP LIMIT ========== ")
+        print(" Current apps count: \(tokens.count) ")
+        print(" Current categories count: \(categoriesCount) ")
+        print(" Max apps allowed: \(maxAppsCount) ")
         
         // Create a new selection to ensure proper update
         var newSelection = FamilyActivitySelection()
         
         // Always clear categories - we only want apps
         if categoriesCount > 0 {
-            print("🗑️ Clearing \(categoriesCount) categories (only apps are allowed)")
+            print("Clearing \(categoriesCount) categories (only apps are allowed)")
             newSelection.categoryTokens = []
         }
         
         // Handle apps
         if tokens.isEmpty {
-            print("⚠️ No apps selected!")
+            print(" No apps selected!")
             if categoriesCount > 0 {
-                print("⚠️ Only categories were selected - they will be cleared")
-                print("💡 Please select individual apps, not app categories")
                 // Show feedback message
                 feedbackMessage = .categoriesOnly(count: categoriesCount)
             } else {
@@ -360,19 +345,13 @@ To ensure your preferred apps are blocked, please select only 3 apps from the Sc
             // Clear everything
             shieldViewModel.selection = newSelection
         } else if tokens.count > maxAppsCount {
-            print("⚠️ App count (\(tokens.count)) exceeds limit (\(maxAppsCount))! Enforcing limit...")
             
             // Randomly select 3 apps based on tokens
             let shuffled = tokens.shuffled()
             let randomThree = Array(shuffled.prefix(maxAppsCount))
             
-            print("🎲 Randomly selected \(randomThree.count) apps from \(tokens.count) apps")
-            print("🎲 Selected app tokens count: \(randomThree.count)")
-            
             // Update selection with only 3 apps
             newSelection.applicationTokens = Set(randomThree)
-            
-            print("✅ Updated selection to \(newSelection.applicationTokens.count) apps")
             
             // Update the view model's selection
             shieldViewModel.selection = newSelection
@@ -380,20 +359,17 @@ To ensure your preferred apps are blocked, please select only 3 apps from the Sc
             // Verify the update
             let finalAppsCount = shieldViewModel.selection.applicationTokens.count
             let finalCategoriesCount = shieldViewModel.selection.categoryTokens.count
-            print("✅ Verification - selection now has \(finalAppsCount) apps and \(finalCategoriesCount) categories")
             
             // Show feedback message and alert
             feedbackMessage = .limitEnforced(selected: tokens.count, kept: finalAppsCount)
             showLimitAlert = true
         } else {
-            print("✅ App count (\(tokens.count)) is within limit")
             // Keep the apps but clear categories
             newSelection.applicationTokens = currentApps
             shieldViewModel.selection = newSelection
             
             let finalAppsCount = shieldViewModel.selection.applicationTokens.count
             let finalCategoriesCount = shieldViewModel.selection.categoryTokens.count
-            print("✅ Final selection: \(finalAppsCount) apps, \(finalCategoriesCount) categories")
             
             // Show success message if categories were cleared
             if categoriesCount > 0 {
@@ -401,23 +377,22 @@ To ensure your preferred apps are blocked, please select only 3 apps from the Sc
             }
         }
         
-        print("🔍 ========== ENFORCE COMPLETE ==========")
     }
 
     // MARK: - Remove App
     private func removeApp(at index: Int) {
         var tokens = Array(shieldViewModel.selection.applicationTokens)
         
-        print("🗑️ Removing app at index \(index)")
-        print("🗑️ Apps before removal: \(tokens.count)")
+        print("Removing app at index \(index)")
+        print("Apps before removal: \(tokens.count)")
 
         if index < tokens.count {
             tokens.remove(at: index)
             shieldViewModel.selection.applicationTokens = Set(tokens)
-            print("🗑️ Apps after removal: \(shieldViewModel.selection.applicationTokens.count)")
+            print("Apps after removal: \(shieldViewModel.selection.applicationTokens.count)")
             // No need to call applyShield() here, user will click Save
         } else {
-            print("❌ Invalid index \(index) for \(tokens.count) apps")
+            print("Invalid index \(index) for \(tokens.count) apps")
         }
     }
 }

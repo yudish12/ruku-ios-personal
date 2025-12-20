@@ -25,61 +25,47 @@ final class ShieldViewModel: ObservableObject {
 
     // MARK: - Apply Shield
     func applyShield() {
-        print("🔹 ========== APPLYING SHIELD ==========")
-        print("🔹 Current selection apps count: \(selection.applicationTokens.count)")
-        print("🔹 Current selection categories count: \(selection.categoryTokens.count)")
-        print("🔹 Max apps allowed: \(maxAppsCount)")
-
         store.clearAllSettings()
-        print("🔹 Cleared previous settings")
-
         // Clear categories - we only want apps (max 3)
         if !selection.categoryTokens.isEmpty {
-            print("🗑️ Clearing categories (only apps allowed)")
+            print("Clearing categories (only apps allowed)")
             selection.categoryTokens = []
         }
 
         // Enforce app limit before applying shield
         var apps = selection.applicationTokens
-        print("🔹 Apps before limit enforcement: \(apps.count)")
         
         if apps.count > maxAppsCount {
+            print("App count (\(apps.count)) is not within limit")
             let tokensArray = Array(apps)
-            print("⚠️ App count (\(apps.count)) exceeds limit (\(maxAppsCount))")
             let randomThree = Array(tokensArray.shuffled().prefix(maxAppsCount))
             apps = Set(randomThree)
             selection.applicationTokens = apps
-            print("⚠️ Limited to \(maxAppsCount) apps randomly selected")
-            print("⚠️ Selected apps: \(apps)")
         } else {
-            print("✅ App count (\(apps.count)) is within limit")
+            print("App count (\(apps.count)) is within limit")
         }
         
-        print("🔹 Final apps count: \(apps.count)")
-        print("🔹 Final categories count: \(selection.categoryTokens.count)")
 
         if apps.isEmpty {
-            print("⚠️ No apps selected to block")
+            print("No apps selected to block")
             store.shield.applications = nil
         } else {
             store.shield.applications = apps
-            print("✅ Blocking \(apps.count) apps")
-            print("✅ Apps being blocked: \(apps)")
+            print("Blocking \(apps.count) apps")
+            print("Apps being blocked: \(apps)")
         }
 
         // Always clear categories since we only want apps
         store.shield.applicationCategories = nil
         store.shield.webDomainCategories = nil
-        print("✅ Categories cleared (only apps are blocked)")
-
-        print("🔹 ========== SHIELD APPLIED SUCCESSFULLY ==========")
+        print("Categories cleared (only apps are blocked)")
     }
 
     // MARK: - Remove Shield
     func removeShield() {
-        print("🔹 Removing Shield...")
+        print("Removing Shield...")
         store.clearAllSettings()
-        print("✅ Shield removed")
+        print("Shield removed")
     }
 }
 
