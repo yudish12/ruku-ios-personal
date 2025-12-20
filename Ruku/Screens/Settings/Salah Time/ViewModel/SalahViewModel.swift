@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 
-struct SalahTime: Identifiable {
+struct SalahTime: Identifiable, Equatable {
     let id = UUID()
     let title: String
     var time: Date

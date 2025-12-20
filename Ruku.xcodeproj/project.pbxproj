@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD664B3D2EF6AD59008A2AFC /* StreakStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD664B3C2EF6AD59008A2AFC /* StreakStore.swift */; };
+		BD664B512EF6FB41008A2AFC /* SalahActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD664B502EF6FB3C008A2AFC /* SalahActivity.swift */; };
+		BD664B532EF6FB6A008A2AFC /* SalahScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD664B522EF6FB61008A2AFC /* SalahScheduleManager.swift */; };
+		BD664B572EF706D6008A2AFC /* ShieldStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD664B562EF706D0008A2AFC /* ShieldStore.swift */; };
+		BD664B582EF70A47008A2AFC /* ShieldStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD664B562EF706D0008A2AFC /* ShieldStore.swift */; };
+		BD664B592EF70A47008A2AFC /* ShieldStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD664B562EF706D0008A2AFC /* ShieldStore.swift */; };
+		BD664B5B2EF70A72008A2AFC /* SalahActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD664B502EF6FB3C008A2AFC /* SalahActivity.swift */; };
+		BD664B5C2EF70A72008A2AFC /* SalahActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD664B502EF6FB3C008A2AFC /* SalahActivity.swift */; };
+		BDA19EFB2EF4A79C00F42087 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA19EFA2EF4A79C00F42087 /* DeviceActivity.framework */; };
+		BDA19F032EF4A79C00F42087 /* SalahMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BDA19EF92EF4A79C00F42087 /* SalahMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BDA19F0B2EF4A9D600F42087 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA19F0A2EF4A9D200F42087 /* LocationManager.swift */; };
+		BDA19F0D2EF4AA9700F42087 /* SalahTimeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA19F0C2EF4AA8E00F42087 /* SalahTimeStore.swift */; };
 		C92E83672EEAEA71002BB4C7 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E83662EEAEA70002BB4C7 /* SubscriptionView.swift */; };
 		C92E836C2EEAEAA3002BB4C7 /* SubscriptionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E836B2EEAEAA3002BB4C7 /* SubscriptionCard.swift */; };
 		C92E83B32EEBEBBB002BB4C7 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92E83B22EEBEBBB002BB4C7 /* LoginScreen.swift */; };
@@ -89,6 +101,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BDA19F012EF4A79C00F42087 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C929BF402EE5306F00554213 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDA19EF82EF4A79C00F42087;
+			remoteInfo = SalahMonitorExtension;
+		};
 		C9D082272EEF439A0068530A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C929BF402EE5306F00554213 /* Project object */;
@@ -106,6 +125,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				C9D082292EEF439A0068530A /* ShieldConfiguration.appex in Embed Foundation Extensions */,
+				BDA19F032EF4A79C00F42087 /* SalahMonitorExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +133,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BD664B3C2EF6AD59008A2AFC /* StreakStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakStore.swift; sourceTree = "<group>"; };
+		BD664B502EF6FB3C008A2AFC /* SalahActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahActivity.swift; sourceTree = "<group>"; };
+		BD664B522EF6FB61008A2AFC /* SalahScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahScheduleManager.swift; sourceTree = "<group>"; };
+		BD664B562EF706D0008A2AFC /* ShieldStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldStore.swift; sourceTree = "<group>"; };
+		BDA19EF92EF4A79C00F42087 /* SalahMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SalahMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDA19EFA2EF4A79C00F42087 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		BDA19F0A2EF4A9D200F42087 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BDA19F0C2EF4AA8E00F42087 /* SalahTimeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahTimeStore.swift; sourceTree = "<group>"; };
 		C929BF482EE5306F00554213 /* Ruku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92E83662EEAEA70002BB4C7 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 		C92E836B2EEAEAA3002BB4C7 /* SubscriptionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCard.swift; sourceTree = "<group>"; };
@@ -198,6 +226,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BDA19F062EF4A79C00F42087 /* Exceptions for "SalahMonitorExtension" folder in "SalahMonitorExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = BDA19EF82EF4A79C00F42087 /* SalahMonitorExtension */;
+		};
 		C9D0822A2EEF439A0068530A /* Exceptions for "ShieldConfiguration" folder in "ShieldConfiguration" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -208,6 +243,19 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		BDA19EFC2EF4A79C00F42087 /* SalahMonitorExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BDA19F062EF4A79C00F42087 /* Exceptions for "SalahMonitorExtension" folder in "SalahMonitorExtension" target */,
+			);
+			path = SalahMonitorExtension;
+			sourceTree = "<group>";
+		};
+		BDBD588B2EF43D0E0081FA12 /* Components */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C9D082222EEF439A0068530A /* ShieldConfiguration */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -219,6 +267,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BDA19EF62EF4A79C00F42087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDA19EFB2EF4A79C00F42087 /* DeviceActivity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C929BF452EE5306F00554213 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +299,7 @@
 			children = (
 				C9F1A8532EE84E3D00712D8F /* Ruku */,
 				C9D082222EEF439A0068530A /* ShieldConfiguration */,
+				BDA19EFC2EF4A79C00F42087 /* SalahMonitorExtension */,
 				C9D0821D2EEF439A0068530A /* Frameworks */,
 				C929BF492EE5306F00554213 /* Products */,
 			);
@@ -253,6 +310,7 @@
 			children = (
 				C929BF482EE5306F00554213 /* Ruku.app */,
 				C9D0821C2EEF439A0068530A /* ShieldConfiguration.appex */,
+				BDA19EF92EF4A79C00F42087 /* SalahMonitorExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -452,6 +510,7 @@
 			children = (
 				C9D0821E2EEF439A0068530A /* ManagedSettings.framework */,
 				C9D082202EEF439A0068530A /* ManagedSettingsUI.framework */,
+				BDA19EFA2EF4A79C00F42087 /* DeviceActivity.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -497,6 +556,12 @@
 		C9F1A8532EE84E3D00712D8F /* Ruku */ = {
 			isa = PBXGroup;
 			children = (
+				BD664B562EF706D0008A2AFC /* ShieldStore.swift */,
+				BD664B522EF6FB61008A2AFC /* SalahScheduleManager.swift */,
+				BD664B502EF6FB3C008A2AFC /* SalahActivity.swift */,
+				BD664B3C2EF6AD59008A2AFC /* StreakStore.swift */,
+				BDA19F0C2EF4AA8E00F42087 /* SalahTimeStore.swift */,
+				BDA19F0A2EF4A9D200F42087 /* LocationManager.swift */,
 				C9F1A8522EE84E3D00712D8F /* RukuApp.swift */,
 				C9F1A89C2EE8A26800712D8F /* RootView.swift */,
 				C9F1A8922EE89ECE00712D8F /* Onboarding */,
@@ -516,6 +581,7 @@
 		C9F1A88C2EE89ECA00712D8F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BDBD588B2EF43D0E0081FA12 /* Components */,
 				C9D082032EEF30F20068530A /* Settings */,
 				C986D71D2EECAFB200AC3613 /* Permisson */,
 				C98D34EF2EE8C28F0029E05D /* HomeScreen.swift */,
@@ -546,6 +612,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BDA19EF82EF4A79C00F42087 /* SalahMonitorExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDA19F072EF4A79C00F42087 /* Build configuration list for PBXNativeTarget "SalahMonitorExtension" */;
+			buildPhases = (
+				BDA19EF52EF4A79C00F42087 /* Sources */,
+				BDA19EF62EF4A79C00F42087 /* Frameworks */,
+				BDA19EF72EF4A79C00F42087 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BDA19EFC2EF4A79C00F42087 /* SalahMonitorExtension */,
+			);
+			name = SalahMonitorExtension;
+			packageProductDependencies = (
+			);
+			productName = SalahMonitorExtension;
+			productReference = BDA19EF92EF4A79C00F42087 /* SalahMonitorExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C929BF472EE5306F00554213 /* Ruku */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C929BF532EE5307000554213 /* Build configuration list for PBXNativeTarget "Ruku" */;
@@ -559,6 +647,10 @@
 			);
 			dependencies = (
 				C9D082282EEF439A0068530A /* PBXTargetDependency */,
+				BDA19F022EF4A79C00F42087 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BDBD588B2EF43D0E0081FA12 /* Components */,
 			);
 			name = Ruku;
 			packageProductDependencies = (
@@ -596,9 +688,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2610;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					BDA19EF82EF4A79C00F42087 = {
+						CreatedOnToolsVersion = 26.0;
+					};
 					C929BF472EE5306F00554213 = {
 						CreatedOnToolsVersion = 26.1.1;
 					};
@@ -623,11 +718,19 @@
 			targets = (
 				C929BF472EE5306F00554213 /* Ruku */,
 				C9D0821B2EEF439A0068530A /* ShieldConfiguration */,
+				BDA19EF82EF4A79C00F42087 /* SalahMonitorExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BDA19EF72EF4A79C00F42087 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C929BF462EE5306F00554213 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -664,6 +767,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BDA19EF52EF4A79C00F42087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD664B592EF70A47008A2AFC /* ShieldStore.swift in Sources */,
+				BD664B5C2EF70A72008A2AFC /* SalahActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C929BF442EE5306F00554213 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -671,6 +783,7 @@
 				C9D0820B2EEF31240068530A /* EditProfileView.swift in Sources */,
 				C9D082152EEF3C0D0068530A /* SettingsRow.swift in Sources */,
 				C9D082112EEF318C0068530A /* HelpSupportView.swift in Sources */,
+				BD664B512EF6FB41008A2AFC /* SalahActivity.swift in Sources */,
 				C9D082072EEF310D0068530A /* EditSalahTimingsView.swift in Sources */,
 				C9D082092EEF31140068530A /* BypassModeView.swift in Sources */,
 				C986D70D2EEC0F9C00AC3613 /* ElevatedShadowModifier.swift in Sources */,
@@ -700,9 +813,12 @@
 				C9D082052EEF31020068530A /* ManageBlockedAppsView.swift in Sources */,
 				C92E83B72EEBECAC002BB4C7 /* PasswordFieldView.swift in Sources */,
 				C9F1A8932EE89ECE00712D8F /* OnboardingPage.swift in Sources */,
+				BD664B3D2EF6AD59008A2AFC /* StreakStore.swift in Sources */,
 				C92E83672EEAEA71002BB4C7 /* SubscriptionView.swift in Sources */,
 				C9F1A8942EE89ECE00712D8F /* OnboardingPageView.swift in Sources */,
 				C986D7112EEC151500AC3613 /* OTPTextField.swift in Sources */,
+				BD664B532EF6FB6A008A2AFC /* SalahScheduleManager.swift in Sources */,
+				BDA19F0D2EF4AA9700F42087 /* SalahTimeStore.swift in Sources */,
 				C9F1A8992EE89ED300712D8F /* PageControlColorModifier.swift in Sources */,
 				C9D0820F2EEF317B0068530A /* ThemeView.swift in Sources */,
 				C9F1A8952EE89ECE00712D8F /* OnboardingView.swift in Sources */,
@@ -721,8 +837,10 @@
 				C9F1A8842EE8976900712D8F /* View+Extension.swift in Sources */,
 				C96C2C362EED99BE00DEBBF3 /* LoginView.swift in Sources */,
 				C99DC79A2EF1DAE0002E7549 /* SalahTimingsAPI.swift in Sources */,
+				BDA19F0B2EF4A9D600F42087 /* LocationManager.swift in Sources */,
 				C99DC79B2EF1DAE0002E7549 /* TimingsModel.swift in Sources */,
 				C99DC7A42EF1E134002E7549 /* Date+Extension.swift in Sources */,
+				BD664B572EF706D6008A2AFC /* ShieldStore.swift in Sources */,
 				C9F1A8572EE84E3D00712D8F /* RukuApp.swift in Sources */,
 				C96C2C412EEDAB6C00DEBBF3 /* SegmentButton.swift in Sources */,
 			);
@@ -732,12 +850,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD664B582EF70A47008A2AFC /* ShieldStore.swift in Sources */,
+				BD664B5B2EF70A72008A2AFC /* SalahActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BDA19F022EF4A79C00F42087 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDA19EF82EF4A79C00F42087 /* SalahMonitorExtension */;
+			targetProxy = BDA19F012EF4A79C00F42087 /* PBXContainerItemProxy */;
+		};
 		C9D082282EEF439A0068530A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9D0821B2EEF439A0068530A /* ShieldConfiguration */;
@@ -746,6 +871,66 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		BDA19F042EF4A79C00F42087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SalahMonitorExtension/SalahMonitorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GMWFC38DP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SalahMonitorExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SalahMonitorExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yud.Ruku.SalahMonitorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BDA19F052EF4A79C00F42087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SalahMonitorExtension/SalahMonitorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GMWFC38DP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SalahMonitorExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SalahMonitorExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yud.Ruku.SalahMonitorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C929BF512EE5307000554213 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -877,10 +1062,11 @@
 				CODE_SIGN_ENTITLEMENTS = Ruku/Ruku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RGJ5SHWS69;
+				DEVELOPMENT_TEAM = 6GMWFC38DP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ruku/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to help track prayer times and nearby mosques.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -913,10 +1099,11 @@
 				CODE_SIGN_ENTITLEMENTS = Ruku/Ruku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RGJ5SHWS69;
+				DEVELOPMENT_TEAM = 6GMWFC38DP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ruku/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to help track prayer times and nearby mosques.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1004,6 +1191,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BDA19F072EF4A79C00F42087 /* Build configuration list for PBXNativeTarget "SalahMonitorExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDA19F042EF4A79C00F42087 /* Debug */,
+				BDA19F052EF4A79C00F42087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C929BF432EE5306F00554213 /* Build configuration list for PBXProject "Ruku" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

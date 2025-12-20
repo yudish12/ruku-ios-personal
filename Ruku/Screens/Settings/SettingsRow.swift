@@ -13,6 +13,7 @@ struct SettingsRow: View {
     let title: String
     let icon: String
     let color: Color
+    let iconColor: Color
 
     var body: some View {
         HStack(spacing: 18) {
@@ -20,10 +21,10 @@ struct SettingsRow: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 20, height: 20)
-                .foregroundColor(color)
+                .foregroundColor(iconColor)
 
             Text(title)
-                .font(.inter(weight: .medium, size: 16))
+                .font(.inter(weight: .regular, size: 16))
                 .foregroundColor(color)
         }
     }
@@ -31,5 +32,5 @@ struct SettingsRow: View {
 
 
 #Preview {
-    SettingsRow(title: "Edit Profile", icon: "person.fill", color: .backgroundTeal)
+    SettingsRow(title: "Edit Profile", icon: "person.fill", color: .backgroundTeal, iconColor: Color.buttonGreen)
 }

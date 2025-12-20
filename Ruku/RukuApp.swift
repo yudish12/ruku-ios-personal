@@ -2,8 +2,6 @@
 //  RukuApp.swift
 //  Ruku
 //
-//  Created by Vishal Singh on 07/12/25.
-//
 
 import SwiftUI
 
@@ -34,4 +32,5 @@ struct RukuApp: App {
         }
     }
 }
+
 

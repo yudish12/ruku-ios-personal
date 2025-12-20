@@ -2,8 +2,6 @@
 //  ShieldConfigurationExtension.swift
 //  ShieldConfiguration
 //
-//  Created by Vishal Singh on 15/12/25.
-//
 
 import ManagedSettings
 import ManagedSettingsUI
