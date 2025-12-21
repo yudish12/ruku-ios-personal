@@ -14,6 +14,7 @@ extension Color {
     static let textPrimaryColor = Color("textPrimaryColor")
     static let textSecondaryColor = Color("textSecondaryColor")
     static let textTertiaryColor = Color("textTertiaryColor")
+    static let lightGrayColor = Color("lightGrayColor")
     init(hex: UInt, opacity: Double = 1) {
             self.init(
                 .sRGB,

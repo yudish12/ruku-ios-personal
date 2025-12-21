@@ -155,6 +155,7 @@ struct SettingsView: View {
             .listStyle(.insetGrouped)         // optional (recommended)
         }
         .navigationTitle("Settings")
+        .toolbarColorScheme(.dark, for: .navigationBar)
         
     }
 }

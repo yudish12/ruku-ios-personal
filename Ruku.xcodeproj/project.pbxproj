@@ -67,6 +67,10 @@
 		C9D082212EEF439A0068530A /* ManagedSettingsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D082202EEF439A0068530A /* ManagedSettingsUI.framework */; };
 		C9D082292EEF439A0068530A /* ShieldConfiguration.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C9D0821C2EEF439A0068530A /* ShieldConfiguration.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9DABABA2EEED8B000B5ED96 /* SalahMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DABAB92EEED8B000B5ED96 /* SalahMode.swift */; };
+		C9EF070A2EF8780500A91F41 /* BypassModeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EF07092EF8780500A91F41 /* BypassModeCard.swift */; };
+		C9EF070C2EF8785C00A91F41 /* BlockActivationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EF070B2EF8785C00A91F41 /* BlockActivationCard.swift */; };
+		C9EF070E2EF878CF00A91F41 /* BlockingFeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EF070D2EF878CF00A91F41 /* BlockingFeatureCard.swift */; };
+		C9EF07102EF87F3C00A91F41 /* DateFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EF070F2EF87F3C00A91F41 /* DateFieldView.swift */; };
 		C9F1A8542EE84E3D00712D8F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A8392EE84E3D00712D8F /* Color+Extension.swift */; };
 		C9F1A8552EE84E3D00712D8F /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A83A2EE84E3D00712D8F /* Font+Extension.swift */; };
 		C9F1A8572EE84E3D00712D8F /* RukuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A8522EE84E3D00712D8F /* RukuApp.swift */; };
@@ -192,6 +196,10 @@
 		C9D0821E2EEF439A0068530A /* ManagedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettings.framework; path = System/Library/Frameworks/ManagedSettings.framework; sourceTree = SDKROOT; };
 		C9D082202EEF439A0068530A /* ManagedSettingsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettingsUI.framework; path = System/Library/Frameworks/ManagedSettingsUI.framework; sourceTree = SDKROOT; };
 		C9DABAB92EEED8B000B5ED96 /* SalahMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahMode.swift; sourceTree = "<group>"; };
+		C9EF07092EF8780500A91F41 /* BypassModeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BypassModeCard.swift; sourceTree = "<group>"; };
+		C9EF070B2EF8785C00A91F41 /* BlockActivationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockActivationCard.swift; sourceTree = "<group>"; };
+		C9EF070D2EF878CF00A91F41 /* BlockingFeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingFeatureCard.swift; sourceTree = "<group>"; };
+		C9EF070F2EF87F3C00A91F41 /* DateFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFieldView.swift; sourceTree = "<group>"; };
 		C9F1A8392EE84E3D00712D8F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		C9F1A83A2EE84E3D00712D8F /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		C9F1A83C2EE84E3D00712D8F /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -330,6 +338,10 @@
 			isa = PBXGroup;
 			children = (
 				C92E836B2EEAEAA3002BB4C7 /* SubscriptionCard.swift */,
+				C9EF07092EF8780500A91F41 /* BypassModeCard.swift */,
+				C9EF070B2EF8785C00A91F41 /* BlockActivationCard.swift */,
+				C9EF070D2EF878CF00A91F41 /* BlockingFeatureCard.swift */,
+				C9EF070F2EF87F3C00A91F41 /* DateFieldView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -798,6 +810,7 @@
 				C99DC7A72EF1E42E002E7549 /* SalahViewModel.swift in Sources */,
 				C99DC7A02EF1DB7D002E7549 /* SalahTimeRow.swift in Sources */,
 				C96C2C722EEDEB3F00DEBBF3 /* AuthAPI.swift in Sources */,
+				C9EF070C2EF8785C00A91F41 /* BlockActivationCard.swift in Sources */,
 				C98D34F52EE8C7210029E05D /* GenderButton.swift in Sources */,
 				C96C2C702EEDE9B000DEBBF3 /* TokenStorage.swift in Sources */,
 				C986D7202EECAFDF00AC3613 /* SinglePermissonRow.swift in Sources */,
@@ -809,6 +822,7 @@
 				C98D35032EE946AA0029E05D /* GenderSelector.swift in Sources */,
 				C945316B2EF0A95100B78619 /* AuthModel.swift in Sources */,
 				C9F1A8552EE84E3D00712D8F /* Font+Extension.swift in Sources */,
+				C9EF07102EF87F3C00A91F41 /* DateFieldView.swift in Sources */,
 				C96C2C662EEDE4E000DEBBF3 /* HTTPMethod.swift in Sources */,
 				C9D082172EEF3E4C0068530A /* ShieldViewModel.swift in Sources */,
 				C9D082022EEF02190068530A /* SettingsVIew.swift in Sources */,
@@ -817,6 +831,7 @@
 				C9D082052EEF31020068530A /* ManageBlockedAppsView.swift in Sources */,
 				C92E83B72EEBECAC002BB4C7 /* PasswordFieldView.swift in Sources */,
 				C9F1A8932EE89ECE00712D8F /* OnboardingPage.swift in Sources */,
+				C9EF070A2EF8780500A91F41 /* BypassModeCard.swift in Sources */,
 				BD664B3D2EF6AD59008A2AFC /* StreakStore.swift in Sources */,
 				C92E83672EEAEA71002BB4C7 /* SubscriptionView.swift in Sources */,
 				C9F1A8942EE89ECE00712D8F /* OnboardingPageView.swift in Sources */,
@@ -837,6 +852,7 @@
 				C986D7142EEC164100AC3613 /* AuthViewModel.swift in Sources */,
 				C96C2C772EEDEC5200DEBBF3 /* Encodable+Extension.swift in Sources */,
 				C9D082132EEF31940068530A /* AboutView.swift in Sources */,
+				C9EF070E2EF878CF00A91F41 /* BlockingFeatureCard.swift in Sources */,
 				C92E83B52EEBEBC9002BB4C7 /* OTPVerificationScreen.swift in Sources */,
 				C9F1A8842EE8976900712D8F /* View+Extension.swift in Sources */,
 				C96C2C362EED99BE00DEBBF3 /* LoginView.swift in Sources */,

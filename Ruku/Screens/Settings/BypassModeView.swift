@@ -8,15 +8,28 @@
 import SwiftUI
 
 struct BypassModeView: View {
-    @AppStorage("bypassModeEnabled") private var bypassMode = false
+    @AppStorage("bypassModeEnabled") private var bypassMode = true
+    @State private var sliderValue: Double = 5
 
     var body: some View {
-        VStack {
-            Text("By Pass Mode")
+        VStack(spacing: 30) {
+           
+            // Bypass Mode
+           BypassModeCard(bypassMode: $bypassMode)
+            
+            // Block Activation Delay
+           BlockActivationCard(sliderValue: $sliderValue)
+            
+            // Blocking Feature
+            BlockingFeatureCard()
+            
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.backgroundColor)
+        .padding()
+        .background(Color.backgroundTealColor)
         .navigationTitle("Bypass Mode")
+        .toolbarColorScheme(.dark, for: .navigationBar)
     }
 }
 
