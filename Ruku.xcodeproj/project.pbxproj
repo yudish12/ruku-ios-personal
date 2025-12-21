@@ -98,6 +98,7 @@
 		C9F1A8962EE89ECE00712D8F /* AppStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A8912EE89ECE00712D8F /* AppStateViewModel.swift */; };
 		C9F1A8992EE89ED300712D8F /* PageControlColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A8972EE89ED300712D8F /* PageControlColorModifier.swift */; };
 		C9F1A89D2EE8A26800712D8F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1A89C2EE8A26800712D8F /* RootView.swift */; };
+		C9F3617E2EF7C773007CEE7E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3617D2EF7C773007CEE7E /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +224,7 @@
 		C9F1A8912EE89ECE00712D8F /* AppStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateViewModel.swift; sourceTree = "<group>"; };
 		C9F1A8972EE89ED300712D8F /* PageControlColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlColorModifier.swift; sourceTree = "<group>"; };
 		C9F1A89C2EE8A26800712D8F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		C9F3617D2EF7C773007CEE7E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -438,6 +440,7 @@
 				C9F1A86C2EE84E6300712D8F /* PermissionManager.swift */,
 				C9F1A8912EE89ECE00712D8F /* AppStateViewModel.swift */,
 				C9D082162EEF3E4C0068530A /* ShieldViewModel.swift */,
+				C9F3617D2EF7C773007CEE7E /* NotificationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				C98D34F52EE8C7210029E05D /* GenderButton.swift in Sources */,
 				C96C2C702EEDE9B000DEBBF3 /* TokenStorage.swift in Sources */,
 				C986D7202EECAFDF00AC3613 /* SinglePermissonRow.swift in Sources */,
+				C9F3617E2EF7C773007CEE7E /* NotificationManager.swift in Sources */,
 				C96C2C392EED99DD00DEBBF3 /* SignupView.swift in Sources */,
 				C9D0820D2EEF31720068530A /* NotificationsView.swift in Sources */,
 				C96C2C682EEDE50000DEBBF3 /* NetworkError.swift in Sources */,
